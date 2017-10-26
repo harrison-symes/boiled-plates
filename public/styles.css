@@ -1,7 +1,37 @@
 body {
   background-color: "blue";
+  font-family: 'Passion One', cursive,
+  cursive;
 }
 
 button {
   background-color: "red";
+}
+
+.header {
+ 
+  border: 1px solid black;
+  margin: auto;
+
+}
+
+h1 {
+  display: flex;
+  /* flex-flow: wrap; */
+  justify-content: center;
+  font-size: 48px;
+}
+
+.navBar {
+  border: 1px solid black;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+span {
+  margin: 10px;
 }
