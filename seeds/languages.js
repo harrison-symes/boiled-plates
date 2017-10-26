@@ -5,11 +5,11 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('languages').insert([
-        {id: 1, language: 'samoan'},
-        {id: 2, language: 'tongan'},
-        {id: 3, language: 'fijian'},
-        {id: 4, language: 'maori'},
-        {id: 5, language: 'tokelau'}
+        {id: 1, language: 'samoan',},
+        {id: 2, language: 'tongan',},
+        {id: 3, language: 'fijian',},
+        {id: 4, language: 'maori',},
+        {id: 5, language: 'tokelau',}
       ]);
     });
 };
