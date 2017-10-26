@@ -1,10 +1,10 @@
 var express = require('express')
 var router = express.Router()
-var phrasesDb = require('../db/languages')
+var langDb = require('../db/languages')
 
 router.get('/', (req, res) => {
   let db = req.app.get('db')
-  languagesDb.getLanguages(db)
+  langDb.getLanguages(db)
     .then(languages => {
       res.json(languages)
     })
