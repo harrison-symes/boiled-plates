@@ -6,7 +6,7 @@ const SingleScenario = (props) => {
   return (
     <div className='single-scenario'>
 
-      <Link to={`/scenario/${props.scenario.id}/phrases`}><div className='scenario'>
+      <Link to={`/scenarios/${props.scenario.id}/phrases`}><div className='scenario'>
         <img />
         <p>{props.scenario.scenario}</p>
       </div>
