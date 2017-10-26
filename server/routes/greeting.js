@@ -1,6 +1,5 @@
 var express = require('express')
 var router = express.Router()
-
 var greetingsDb = require('../db/greeting')
 
 router.get('/', (req, res) => {
