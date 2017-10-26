@@ -1,5 +1,5 @@
 
-exports.seed = function(knex, Promise) {
+exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
   return knex('languages').del()
     .then(function () {
@@ -10,6 +10,6 @@ exports.seed = function(knex, Promise) {
         {id: 3, language: 'fijian'},
         {id: 4, language: 'maori'},
         {id: 5, language: 'tokelau'}
-      ]);
-    });
+      ])
+    })
 };

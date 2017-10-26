@@ -11,7 +11,7 @@ class SingleLanguage extends React.Component {
   render () {
     return (
       <div className='singleview-container'>
-      </div>  
+      </div>
     )
   }
 }

@@ -18,7 +18,7 @@ class Home extends React.Component {
         </div>
         <div className='info'>
           <h3>Speak anytime, anywhere!</h3>
-          <p>//MISSION OR A BACKGROUND TO WHY THIS PAGE EXISTS.</p>
+          <p>A fun and accessible way to learn Pacific Languages, so you can get to speaking in your day to day interactions!</p>
         </div>
         <Languages />
 
