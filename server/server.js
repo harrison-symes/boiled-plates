@@ -3,7 +3,6 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var cors = require('cors')
 
-var phrases = require('./routes/phrases')
 var languages = require('./routes/languages')
 var scenarios = require('./routes/scenarios')
 
@@ -14,7 +13,6 @@ server.use(cors('*'))
 server.use(bodyParser.json())
 server.use(express.static(path.join(__dirname, '../public')))
 
-server.use('/api/v1/phrases', phrases)
 server.use('/api/v1/languages', languages)
 server.use('/api/v1/scenarios', scenarios)
 
