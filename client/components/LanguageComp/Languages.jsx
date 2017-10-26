@@ -1,16 +1,32 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { connect } from 'react-redux'
+import { fetchLanguages } from '../../actions/languages'
+import SingleLanguage from './SingleLanguage.jsx'
 
-const Languages = () => {
-  return (
-    <div className='languageOpt'>
-      <Link to="/Scenarios"><div className='language-links'><img /><p>Samoan</p></div></Link>
-      <div className='language-links'><img /><p>Fijian</p></div>
-      <div className='language-links'><img /><p>Tongan</p></div>
-      <div className='language-links'><img /><p>Te Reo Maori</p></div>
-      <div className='language-links'><img /><p>Vanuatu(Bislama)</p></div>
-    </div>
-  )
+class Languages extends React.Component {
+  componentDidMount () {
+    this.props.dispatch(fetchLanguages())
+  }
+
+  render () {
+    return (
+      <div className='languageOpt'>
+        {this.props.languages.map((language) => {
+          return (
+            <div className='language-links' key={language.id}>
+              <SingleLanguage language={language}/>
+            </div>
+          )
+        })}
+      </div>
+    )
+  }
 }
 
-export default Languages
+const mapStateToProps = (state) => {
+  return {
+    languages: state.languages
+  }
+}
+
+export default connect(mapStateToProps)(Languages)

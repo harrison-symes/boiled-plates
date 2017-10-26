@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-const SingleLanguage = (props) => {
+const SingleScenario = (props) => {
   return (
     <div className='languageOpt'>
 
@@ -16,4 +16,4 @@ const SingleLanguage = (props) => {
   )
 }
 
-export default connect()(SingleLanguage)
+export default connect()(SingleScenario)
