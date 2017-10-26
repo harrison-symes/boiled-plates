@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 
 const SingleScenario = (props) => {
   return (
-    <div className='languageOpt'>
+    <div className='single-scenario'>
 
-      <Link to={`/languages/${props.language.id}/scenarios`}><div className='language-links'>
+      <Link to={`/scenario/${props.scenario.id}/phrases`}><div className='scenario'>
         <img />
-        <p>{props.language.language}</p>
+        <p>{props.scenario.scenario}</p>
       </div>
       </Link>
 
