@@ -1,14 +1,22 @@
 import React from 'react'
-import {HashRouter as Router, Route} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 
+import Home from './Home'
 import Header from './Header'
+// import Footer from './Footer'
 
 const App = () => (
-  <Router>
-    <div className='app-container'>
-      <Route exact path="/" component={Header} />      
+  <div className='app-container'>
+    <div className="header">
+      <Header />
     </div>
-  </Router>
+    <div className="container">
+      <Route exact path="/" component={Home} />
+    </div>
+    <div className="footer">
+      {/* <Footer /> */}
+    </div>
+  </div>
 )
 
 export default App

@@ -3,6 +3,7 @@ import {render} from 'react-dom'
 import {Provider} from 'react-redux'
 import {createStore, applyMiddleware, compose} from 'redux'
 import thunkMiddleware from 'redux-thunk'
+import {HashRouter as Router} from 'react-router-dom'
 
 import reducers from './reducers'
 import App from './components/App'
@@ -14,9 +15,11 @@ let store = createStore(reducers, compose(
 
 document.addEventListener('DOMContentLoaded', () => {
   render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
+    <Router>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </Router>,
     document.getElementById('app')
   )
 })
