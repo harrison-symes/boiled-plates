@@ -3,7 +3,7 @@ import {HashRouter as Route} from 'react-router-dom'
 
 import Home from './Home'
 import Header from './Header'
-import Footer from './Footer'
+// import Footer from './Footer'
 
 const App = () => (
   <div className='app-container'>
@@ -14,7 +14,7 @@ const App = () => (
       <Route exact path="/" component={Home} />
     </div>
     <div className="footer">
-      <Footer />
+      {/* <Footer /> */}
     </div>
   </div>
 )
