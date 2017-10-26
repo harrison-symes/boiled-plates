@@ -4,7 +4,6 @@ exports.up = function (knex, Promise) {
     table.increments('id').primary()
     table.string('phrase')
     table.integer('scenario_id').references('scenarios.id')
-    table.integer('language_id').references('languages.id')
     table.string('is_slow')
     table.string('sound_file')
   })
