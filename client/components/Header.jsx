@@ -11,7 +11,6 @@ const Header = () => {
         <span>Sign In</span>
         <span>Contact</span>
       </div>
-
     </div>
   )
 }
