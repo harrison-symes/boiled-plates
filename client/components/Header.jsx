@@ -5,6 +5,7 @@ const Header = () => {
   return (
     <div className='header'>
       <h1>Speacifik</h1>
+      <p>Learn the lingo of the South Pacific</p>
       <div className='navBar'>
         <span>About</span>
         <span>Sign Up</span>

@@ -1,9 +1,11 @@
 body {
   background-color: "blue";
-  /* font-family: 'Passion One', cursive; */
+  font-family: 'Passion One', cursive;
   font-family: 'Source Sans Pro', sans-serif;
   sans-serif;
   cursive;
+  width: 80%;
+  margin: auto;
 }
 
 button {
@@ -11,11 +13,24 @@ button {
 }
 
 .header {
- 
-  border: 1px solid black;
+  border-top: 10px solid black;
   margin: auto;
-
+  text-align: center;
 }
+
+.container {
+  text-align: center;
+  font-family: 'Source Sans Pro',
+  sans-serif;
+}
+
+.banner {
+  background-image: url("http://annapolisopera.org/wp-content/uploads/2013/05/South-Pacific-website.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+
 
 h1 {
   display: flex;
@@ -23,7 +38,8 @@ h1 {
   cursive;
   /* flex-flow: wrap; */
   justify-content: center;
-  font-size: 48px;
+  font-size: 64px;
+  /* border: 1px solid black; */
 }
 
 .navBar {
@@ -38,10 +54,10 @@ h1 {
 
 .languageOpt{
   margin-top: 20px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   flex-flow: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: center;
   padding: 20px;
 }
@@ -56,4 +72,14 @@ img{
   border-radius: 50%;
   width: 120px;
   height: 120px;
+}
+
+.footer {
+  text-align: center;
+  background-color: black;
+  color: white;
+  position: relative;
+  font-size: 10px;
+  height: 20px;
+  padding: 10px;
 }
