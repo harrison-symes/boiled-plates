@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route, Link } from 'react-router-dom'
-import { fetchLanguages} from '../actions/languages'
+import { fetchLanguages } from '../actions/languages'
 import { connect } from 'react-redux'
 
 import Languages from './LanguageComp/Languages.jsx'
