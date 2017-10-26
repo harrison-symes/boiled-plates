@@ -1,7 +1,59 @@
 body {
   background-color: "blue";
+  /* font-family: 'Passion One', cursive; */
+  font-family: 'Source Sans Pro', sans-serif;
+  sans-serif;
+  cursive;
 }
 
 button {
   background-color: "red";
+}
+
+.header {
+ 
+  border: 1px solid black;
+  margin: auto;
+
+}
+
+h1 {
+  display: flex;
+  font-family: 'Passion One',
+  cursive;
+  /* flex-flow: wrap; */
+  justify-content: center;
+  font-size: 48px;
+}
+
+.navBar {
+  border: 1px solid black;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.languageOpt{
+  margin-top: 20px;
+  border: 1px solid black;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  text-align: center;
+  padding: 20px;
+}
+
+span {
+  margin: 10px;
+}
+
+img{
+  background-image: url(http://divenewzealand.co.nz/wp-content/uploads/2017/06/158-A1-P1-470x356.png);
+  /* background-position: center; */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
 }

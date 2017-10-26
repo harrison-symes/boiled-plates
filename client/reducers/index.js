@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux'
 
-import greetings from './greetings' 
+import phrases from './phrases' 
 
 export default combineReducers({
-  greetings
+  phrases
 })
