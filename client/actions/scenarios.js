@@ -7,10 +7,10 @@ export const receiveScenarios = (scenarios) => {
   }
 }
 
-export function fetchScenarios () {
+export function fetchScenarios (languageId) {
   return (dispatch) => {
     request
-      .get(`/api/v1/scenarios`)
+      .get(`/api/v1/languages/${languageId}/scenarios`)
       .end((err, res) => {
         if (err) {
           console.error(err.message)

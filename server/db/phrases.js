@@ -1,11 +1,7 @@
-const path = require('path')
-const config = require(path.join(__dirname, '/../../knexfile')).development
-const knex = require('knex')(config)
 
-const getPhrases = (langId, scenId) => {
-  return knex('phrases')
-    .select('id', 'phrase', 'is_slow as isSlow', 'sound_file as soundFile')
-    .where('language_id', langId)
+const getPhrases = (scenId, db) => {
+  return db('phrases')
+    .select('id', 'phrase', 'sound_file_slow as soundFileSlow', 'sound_file as soundFile', 'samoan_phrase as samoanPhrase')
     .where('scenario_id', scenId)
 }
 
