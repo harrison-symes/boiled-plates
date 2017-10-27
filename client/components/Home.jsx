@@ -14,11 +14,12 @@ class Home extends React.Component {
     return (
       <div className='container'>
         <div className="banner">
-          <p></p>
-        </div>
-        <div className='info'>
-          <h3>Speak anytime, anywhere!</h3>
-          <p>A fun and accessible way to learn Pacific Languages, so you can get to speaking in your day to day interactions!</p>
+          <h2> South Pacific Lingo </h2>
+
+          <div className='info'>
+            <h3>Speak anytime, anywhere!</h3>
+            <p>A fun and accessible way to learn Pacific Languages, so you can get to speaking in your day to day interactions!</p>
+          </div>
         </div>
         <Languages />
 

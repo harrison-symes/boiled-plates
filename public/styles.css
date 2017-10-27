@@ -1,12 +1,32 @@
 body {
-  background-color: "blue";
   font-family: 'Passion One', cursive;
   font-family: 'Source Sans Pro', sans-serif;
-  sans-serif;
-  cursive;
-  width: 80%;
   margin: auto;
+  color: black;
+  text-align: -webkit-center
 }
+
+#app {
+   background-image: url("http://cdni.condenast.co.uk/1920x1280/a_c/aerial-shot-of-tetiaroa-south-pacific-conde-nast-traveller-13jan15-tim-mckenna.jpg");
+   background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#country {
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
 
 button {
   background-color: "red";
@@ -17,7 +37,10 @@ button {
   margin: auto;
   text-align: center;
 }
-
+h2 {
+  font-size: 24px;
+   font-family: 'Nothing You Could Do', cursive;
+}
 .container {
   text-align: center;
   font-family: 'Source Sans Pro',
@@ -25,10 +48,13 @@ button {
 }
 
 .banner {
-  background-image: url("http://annapolisopera.org/wp-content/uploads/2013/05/South-Pacific-website.jpg");
   background-size: cover;
   background-position: center;
-  height: 300px;
+    text-align: center;
+  color: black;
+  position: relative;
+    height: 60px;
+
 }
 
 h1 {
@@ -38,6 +64,7 @@ h1 {
   /* flex-flow: wrap; */
   justify-content: center;
   font-size: 64px;
+  color:white;
   /* border: 1px solid black; */
 }
 
@@ -59,6 +86,7 @@ h1 {
   justify-content: space-between;
   text-align: center;
   padding: 20px;
+  text-decoration: none;
 }
 
 span {
@@ -71,6 +99,7 @@ img{
   border-radius: 50%;
   width: 120px;
   height: 120px;
+  border: 2px dashed white;
 }
 
 .footer {
