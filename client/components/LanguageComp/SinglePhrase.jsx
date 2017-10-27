@@ -7,7 +7,8 @@ class SinglePhrase extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      playSound: false
+      playSound: false,
+      playSlow: false
     }
   }
   startSound () {
@@ -17,6 +18,16 @@ class SinglePhrase extends React.Component {
   stopSound () {
     this.setState({playSound: false})
   }
+
+  startSoundSlow () {
+    this.setState({ playSlow: true })
+    setTimeout(this.stopSoundSlow.bind(this), 10000)
+  }
+
+  stopSoundSlow () {
+    this.setState({ playSlow: false })
+  }
+
   render () {
     return (
 
@@ -29,11 +40,17 @@ class SinglePhrase extends React.Component {
         {this.state.playSound && <Sound
           url={this.props.phrase.soundFile}
           playStatus={Sound.status.PLAYING}
-          playFromPosition={0 /* in milliseconds*/}
+          playFromPosition={0 /* in milliseconds */}
+        />}
+
+        {this.state.playSlow && <Sound
+          url={this.props.phrase.soundFileSlow}
+          playStatus={Sound.status.PLAYING}
+          playFromPosition={0 /* in milliseconds */}
         />}
 
         <button onClick={this.startSound.bind(this)}>Listen</button>
-        <button onClick={this.startSound.bind(this)}>Slow</button>
+        <button onClick={this.startSoundSlow.bind(this)}>Slow</button>
       </div>
     )
   }
