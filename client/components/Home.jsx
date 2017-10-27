@@ -14,7 +14,7 @@ class Home extends React.Component {
     return (
       <div className='container'>
         <div className="banner">
-          <p></p>
+          <h2> South Pacific Lingo </h2>
         </div>
         <div className='info'>
           <h3>Speak anytime, anywhere!</h3>
