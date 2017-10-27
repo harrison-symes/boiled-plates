@@ -1,13 +1,13 @@
 body {
   font-family: 'Passion One', cursive;
   font-family: 'Source Sans Pro', sans-serif;
-  width: 80%;
   margin: auto;
-  color: white;
+  color: black;
+  text-align: -webkit-center
 }
 
 #app {
-   background-image: url("https://i.pinimg.com/736x/13/c9/54/13c954a10932b21a3fb60c64c2008c70--california-nature-pacific-grove-california.jpg");
+   background-image: url("http://cdni.condenast.co.uk/1920x1280/a_c/aerial-shot-of-tetiaroa-south-pacific-conde-nast-traveller-13jan15-tim-mckenna.jpg");
    background-repeat: no-repeat;
     background-position: 50% 0;
     -ms-background-size: cover;
@@ -16,6 +16,12 @@ body {
     -webkit-background-size: cover;
     background-size: cover;
 }
+
+.language-links {
+  text-decoration: none;
+  background-color: white;
+}
+
 
 
 button {
@@ -27,7 +33,10 @@ button {
   margin: auto;
   text-align: center;
 }
-h2
+h2 {
+  font-size: 24px;
+   font-family: 'Nothing You Could Do', cursive;
+}
 .container {
   text-align: center;
   font-family: 'Source Sans Pro',
@@ -35,14 +44,12 @@ h2
 }
 
 .banner {
-  font-family: 'Nothing You Could Do', cursive;
   background-size: cover;
   background-position: center;
     text-align: center;
-  background-color:white;
   color: black;
   position: relative;
-  font-size: 30px;
+  
   height: 60px;
 
 }
@@ -54,6 +61,7 @@ h1 {
   /* flex-flow: wrap; */
   justify-content: center;
   font-size: 64px;
+  color:white;
   /* border: 1px solid black; */
 }
 
@@ -75,6 +83,7 @@ h1 {
   justify-content: space-between;
   text-align: center;
   padding: 20px;
+  text-decoration: none;
 }
 
 span {
@@ -87,6 +96,7 @@ img{
   border-radius: 50%;
   width: 120px;
   height: 120px;
+  border: 2px dashed white;
 }
 
 .footer {
