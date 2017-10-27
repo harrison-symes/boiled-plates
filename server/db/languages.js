@@ -1,6 +1,6 @@
-const getLanguages = (db) => {
+const getLanguages = (db, image) => {
   return db('languages')
-    .select()
+    .select('language', 'image')
 }
 
 module.exports = {
