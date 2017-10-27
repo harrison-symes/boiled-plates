@@ -34,8 +34,6 @@ class SinglePhrase extends React.Component {
       <div className='scenario'>
         <p>{this.props.phrase.phrase}</p>
         <p>{this.props.phrase.samoanPhrase}</p>
-        <p>{this.props.phrase.soundFile}</p>
-        <p>{this.props.phrase.soundFileSlow}</p>
 
         {this.state.playSound && <Sound
           url={this.props.phrase.soundFile}
