@@ -7,7 +7,7 @@ const SingleLanguage = (props) => {
     <div className='languageOpt'>
 
       <Link to={`/languages/${props.language.id}/scenarios`}><div className='language-links'>
-        <img />
+        <img src={props.language.image}/>
         <p id='country'>{props.language.language}</p>
       </div>
       </Link>

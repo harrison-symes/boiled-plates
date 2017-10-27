@@ -3,7 +3,8 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   margin: auto;
   color: black;
-  text-align: -webkit-center
+  text-align: -webkit-center;
+
 }
 
 #app {
@@ -83,10 +84,11 @@ h1 {
   /* border: 1px solid black; */
   display: flex;
   flex-flow: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   text-align: center;
   padding: 20px;
   text-decoration: none;
+  height: 764px;
 }
 
 span {
@@ -94,19 +96,19 @@ span {
 }
 
 img{
-  background-image: url(http://divenewzealand.co.nz/wp-content/uploads/2017/06/158-A1-P1-470x356.png);
-  /* background-position: center; */
+    /* background-position: center; */
   border-radius: 50%;
   width: 120px;
   height: 120px;
   border: 2px dashed white;
+  background-size: cover;
 }
 
 .footer {
   text-align: center;
   background-color: black;
   color: white;
-  position: relative;
+  position: static;
   font-size: 10px;
   height: 20px;
   padding: 10px;
