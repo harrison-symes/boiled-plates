@@ -17,11 +17,15 @@ body {
     background-size: cover;
 }
 
-.language-links {
-  text-decoration: none;
+#country {
   background-color: white;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
 
 
 button {
@@ -49,8 +53,7 @@ h2 {
     text-align: center;
   color: black;
   position: relative;
-  
-  height: 60px;
+    height: 60px;
 
 }
 
