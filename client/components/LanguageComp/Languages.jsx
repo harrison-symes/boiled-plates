@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Sound from 'react-sound'
+// import Sound from 'react-sound'
 
 import { fetchLanguages } from '../../actions/languages'
 import SingleLanguage from './SingleLanguage.jsx'
@@ -20,17 +20,6 @@ class Languages extends React.Component {
             </div>
           )
         })}
-
-        <Sound
-          url="/audio/coffee.mp3"
-          playStatus={Sound.status.PLAYING}
-          playFromPosition={0 /* in milliseconds */}
-          onLoading={this.handleSongLoading}
-          onPlaying={this.handleSongPlaying}
-          onFinishedPlaying={this.handleSongFinishedPlaying}
-        />
-
-
       </div>
     )
   }

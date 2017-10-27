@@ -11,7 +11,7 @@ class Scenarios extends React.Component {
 
   render () {
     return (
-      <div className='scenario-container'>
+      <div className='languageOpt'>
         {this.props.scenarios.map((scenario) => {
           return (
             <div className='scenario-link' key={scenario.id}>
