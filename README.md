@@ -7,7 +7,7 @@ Our team is still working on this project.
 
 **Install / Running**
 
-`git clone https://github.com/Kai-Time/kai-time Kai Time  `
+`git clone https://github.com/Kai-Time/kai-time Kai Time`  
 `cd Kai-time  `  
 npm install  
 npm run dev  
