@@ -1,30 +1,26 @@
 var jwt = require('jsonwebtoken')
 var { getUserByName } = require('../db/users')
 var verifyJwt = require('express-jwt')
-var { compare } = require('./hash')
 
 function issue (req, res) {
-  console.log(req.body)
-  getUserByName(req.body.user_name, req.app.get('db'))
+  getUserByName(req.body.username)
     .then(user => {
-      compare(req.body.password, user.hash, (err, match) => {
-        if (err) res.status(500).json({ message: err.message })
-        else if (!match) res.status(400).json({ message: 'password is incorrect' })
-        else {
-          var token = createToken(user, process.env.JWT_SECRET)
-          res.json({
-            message: 'Authentication successful',
-            token
-          })
-        }
+      var token = createToken(user, process.env.JWT_SECRET)
+      res.json({
+        message: 'Authentication successful',
+        token
       })
+    })
+    .catch(err => {
+      console.log(err.message)
     })
 }
 
 function createToken (user, secret) {
+  console.log(user)
   return jwt.sign({
-    user_id: user.user_id,
-    user_name: user.user_name
+    id: user.id,
+    username: user.username
   }, secret, {
     expiresIn: '24h'
   })
