@@ -5,13 +5,14 @@ You'll find us online https://kaitime.herokuapp.com/#/
 
 Our team is still working on this project.
 
-Install / Running
+**Install / Running**
 
-git clone https://github.com/Kai-Time/kai-time Kai Time
-cd Kai-time
-npm install
-npm run dev
-visit the app at http://localhost:3000.
+git clone https://github.com/Kai-Time/kai-time Kai Time  
+cd Kai-time  
+npm install  
+npm run dev  
+visit the app at http://localhost:3000.  
+
 Description
 
 An application that displays and searches through vegetarian recipes and lets you log in, create a profile, track your progess and earn badges as you experiment more with a vegetarian lifestyle.
