@@ -4,9 +4,7 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('recipes').insert([
-        {id: 1, text: 'Hello There'},
-        {id: 2, text: 'Greetings Friend'},
-        {id: 3, text: 'Well Met'}
+        {id: 1, name: 'Rhubarb Soup', instructions: 'Add water, add rhubarb. Simmer. Season', image: '', ingredients: 'rhubarb, water, salt, pepper', profile_id: 1},
       ])
     })
 }
