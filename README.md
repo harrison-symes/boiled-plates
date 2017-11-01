@@ -19,10 +19,10 @@ An application that displays and searches through vegetarian recipes and lets yo
 
 Authors
 
-Skye Simpson - Product owner, full stack developer and tester
-Dazyang - Git master, Full stack developer and tester
-Aaron Mackdonald - Time master, Full stack developer and tester
-Rajal Kumar -  Scrum master, Full stack developer and tester
+Skye Simpson - Product owner, full stack developer and tester  
+Dazyang - Git master, Full stack developer and tester  
+Aaron Mackdonald - Time master, Full stack developer and tester  
+Rajal Kumar -  Scrum master, Full stack developer and tester  
 
 App main features:
 
