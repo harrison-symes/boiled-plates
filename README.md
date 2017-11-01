@@ -1,54 +1,58 @@
-# A starter webpack project for React, Redux, Express and Knex
+Final project
+Project name: Kai Time?!
 
-This is a rad base for starting a new full-stack project, or just as reference for how to do things the Harrison way (which is with absolutely no test folder, I'll leave that one to Alan)
+You'll find us online https://kaitime.herokuapp.com/#/
 
-* Fork this repo to your github
-* Rename your repo according to the app you're building
-* Clone your forked repo down
-* Run the following commands in your terminal
+Our team is still working on this project.
 
-```sh
+Install / Running
+
+git clone https://github.com/Kai-Time/kai-time Kai Time
+cd Kai-time
 npm install
-knex migrate:latest
-knex seed:run
+npm run dev
+visit the app at http://localhost:3000.
+Description
 
-```
+An application that displays and searches through vegetarian recipes and lets you log in, create a profile, track your progess and earn badges as you experiment more with a vegetarian lifestyle.
 
-  `npm run dev` for bundling, watch and nodemon
+Authors
 
-  `npm start` only runs server (setup for heroku)
+Skye Simpson - Product owner, full stack developer and tester
+Dazyang - Git master, Full stack developer and tester
+Aaron Mackdonald - Time master, Full stack developer and tester
+Rajal Kumar -  Scrum master, Full stack developer and tester
 
+App main features:
 
-# Heroku!!!
+viewing list of recipes and their details
+adding recipes
+tracking your progress through your profile and earning badges
+rating and commenting
+enabled authorisation and adding users
 
-#### Creating your app
+Learning Objectives:
 
-Create your app with `heroku create [name]`
+practise: JS (ES6), React, Redux, Express, Knex, creating REST API, consuming external API, SQLite, HTML, CSS, Bulma, Node, npm, Heroku
+full stack development
+testing: Supertest, Enzyme, Jest
+applying Agile project techniques
+User Stories
 
-You can check that this was successful by running `heroku apps` to view a list of your apps
+User Stories for the What's For Lunch app project.
 
-
-#### Adding postgres
-
-Add postgresql (hobby dev) to your app at `https://dashboard.heroku.com/apps/[APP NAME HERE]/resources`
-
-Check that pg has been added by running `heroku addons` to ensure the postgresql db is on your app
-
-
-### Deploying!
-
-I have created several npm scripts that will be useful for deploying your app to heroku easily.
-
-`npm run h:deploy` will push your local master branch to your heroku app
-
-`npm run h:migrate` will run your knex migrations on your deployed heroku app
-
-`npm run h:seed` will run your seeds on your deployed app
-
-If ever you need to rollback, you can also just use `npm run h:rollback`
-
-
-## Ta-Da!
-Your app should be deployed!
-
-I can add some exercises/comments to this repo if there is desire for such, but for now, hopefully this proves useful :)
+As a user I want:	Require authentication?	Stretch?
+View a list of vegetarian restaurants in Wellington	no	no
+Filter restaurants by food type / dine option / order type	no	no
+View a list of filtered restaurants	no	no
+View filtered restaurants on a map	no	yes
+View specific restaurant description, photo, and contact details	no	no
+View a map of a specific restaurant	no	no
+View a graph rating of a specific restaurant	no	no
+View users' comments of a specific restaurant	no	no
+Add a new comment to a specified restaurant	yes	yes
+Register as a new user	yes	no
+Log in as a user	yes	no
+Be able to use the app on a mobile	no	yes
+API Documentation
+See API documentation for the project here
