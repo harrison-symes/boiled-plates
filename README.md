@@ -44,14 +44,14 @@ User Stories for the What's For Lunch app project.
 | As a user I want: | Require authentication? | Stretch? |
 | ------ | -------- | -------- |
 | View a list of vegetarian recipes | no | no |
-| Filter recipes by food type / portion | no | no |
-| View a list of filtered recipes | no | no |
-| Have a profile and trackable goals  | no | yes |
-| Rate recipes | no | no |
-| Submit recipes  | no | no |
+| Filter recipes by food type / portion | no | yes |
+| View a list of filtered recipes | no | yes |
+| Have a profile and trackable goals  | yes | no |
+| Rate recipes | yes | no |
+| Submit recipes  | yes | no |
 | View a graph rating of a specific recipe  | no | no |
 | View users' comments of a specific recipe | no | no |
-| Add a new comment to a specified recipe  | yes | yes |
+| Add a new comment to a specified recipe  | yes | no |
 | Register as a new user  | yes | no |
 | Log in as a user | yes | no |
 | Be able to use the app on a mobile | no | yes |
