@@ -1,7 +1,11 @@
 import {combineReducers} from 'redux'
 
-import greetings from './greetings' 
+import phrases from './phrases'
+import languages from './languages'
+import scenarios from './scenarios'
 
 export default combineReducers({
-  greetings
+  phrases,
+  languages,
+  scenarios
 })

@@ -1,7 +1,115 @@
 body {
-  background-color: "blue";
+  font-family: 'Passion One', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: auto;
+  color: black;
+  text-align: -webkit-center;
+
 }
+
+#app {
+   background-image: url("http://cdni.condenast.co.uk/1920x1280/a_c/aerial-shot-of-tetiaroa-south-pacific-conde-nast-traveller-13jan15-tim-mckenna.jpg");
+   background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#country {
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
 
 button {
   background-color: "red";
+}
+
+.header {
+  border-top: 10px solid black;
+  margin: auto;
+  text-align: center;
+}
+h2 {
+  font-size: 24px;
+   font-family: 'Nothing You Could Do', cursive;
+}
+.container {
+  text-align: center;
+  font-family: 'Source Sans Pro',
+  sans-serif;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+    text-align: center;
+  color: black;
+  position: relative;
+    height: 60px;
+
+}
+
+h1 {
+  display: flex;
+  font-family: 'Passion One',
+  cursive;
+  /* flex-flow: wrap; */
+  justify-content: center;
+  font-size: 64px;
+  color:white;
+  /* border: 1px solid black; */
+}
+
+.navBar {
+  border: 1px solid black;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.languageOpt{
+  margin-top: 20px;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  height: 764px;
+}
+
+span {
+  margin: 10px;
+}
+
+img{
+    /* background-position: center; */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  border: 2px dashed white;
+  background-size: cover;
+}
+
+.footer {
+  text-align: center;
+  background-color: black;
+  color: white;
+  position: static;
+  font-size: 10px;
+  height: 20px;
+  padding: 10px;
 }
