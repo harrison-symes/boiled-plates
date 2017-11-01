@@ -7,6 +7,7 @@ const App = () => (
     <div className='app-container'>
       <h1>Hello World</h1>
       <Route exact path="/" component={Recipes} />
+      <Route path="/challenge" component={Challenge} />
     </div>
   </Router>
 )
