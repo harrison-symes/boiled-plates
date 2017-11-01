@@ -53,6 +53,6 @@ User Stories for the What's For Lunch app project.
 | View users' comments of a specific recipe | no | no |
 | Add a new comment to a specified recipe  | yes | no |
 | Register as a new user  | yes | no |
-| Log in as a user | yes | no |
+| Log in as a user | yes | no | 
 | Be able to use the app on a mobile | no | yes |
 
