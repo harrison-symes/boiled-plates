@@ -39,7 +39,7 @@ testing: Supertest, Enzyme, Jest
 applying Agile project techniques
 User Stories
 
-User Stories for the What's For Lunch app project.
+User Stories for the Kai Time app project.
 
 | As a user I want: | Require authentication? | Stretch? |
 | ------ | -------- | -------- |
