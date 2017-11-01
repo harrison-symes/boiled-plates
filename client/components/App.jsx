@@ -1,6 +1,6 @@
 import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
-import Recipes from './Recipes'
+import Recipes from './recipes/Recipes'
 import Challenge from './Challenge'
 
 const App = () => (

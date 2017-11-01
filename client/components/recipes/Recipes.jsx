@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {getRecipes} from '../actions/recipes'
+import {getRecipes} from '../../actions/recipes'
 
 const renderRecipe = (recipe, key) => (
   <h1 key={key}>{recipe.text}</h1>
