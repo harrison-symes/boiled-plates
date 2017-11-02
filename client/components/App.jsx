@@ -1,5 +1,6 @@
 import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
+import Recipes from './recipes/Recipes'
 import Header from './Header'
 import Banner from './Banner'
 import Profile from './Profile'

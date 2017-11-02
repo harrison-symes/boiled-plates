@@ -53,6 +53,7 @@
     "pg": "^6.2.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-images-upload": "^1.1.1",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "react-test-renderer": "^15.5.4",

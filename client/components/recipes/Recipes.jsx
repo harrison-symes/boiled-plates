@@ -1,6 +1,7 @@
 import React from 'react'
 // import {connect} from 'react-redux'
 
+import {getRecipes} from '../../actions/recipes'
 // import {getRecipes} from '../actions/recipes'
 
 const Recipes = () => {
