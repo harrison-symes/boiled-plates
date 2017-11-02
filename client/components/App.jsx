@@ -4,7 +4,6 @@ import Recipes from './recipes/Recipes'
 import Header from './Header'
 import Banner from './Banner'
 import Profile from './Profile'
-import Recipes from './Recipes'
 import Challenge from './Challenge'
 import Login from './Login'
 import Register from './Register'
@@ -17,9 +16,9 @@ const App = () => (
     <div className='app'>
       <Route path='/' component={Header} />
       <Route exact path='/' component={Banner} />
-      <Route path='/profile' component={Profile} />
       <Route path='/login' component={Login} />
       <Route path='/register' component={Register} />
+      <Route path='/profile' component={Profile} />
       <div className='flex-container'>
         <Route exact path='/' component={Recipes} />
         <Route exact path='/' component={Challenge} />

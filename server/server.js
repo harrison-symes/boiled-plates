@@ -19,5 +19,4 @@ server.use('/api/auth', require('./routes/auth'))
 
 server.use('/api/profiles', profiles)
 
-
 module.exports = server
