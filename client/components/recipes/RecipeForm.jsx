@@ -39,6 +39,7 @@ class RecipeForm extends React.Component {
             <input type='text' value={this.state.value} onChange={this.handleChange} />
           </label>
           <ImageUploader withIcon={true} buttonText='Choose images' onChange={this.onDrop} imgExtension={['.jpg', '.gif', '.png']} maxFileSize={5242880} />
+          
         </form>
       </div>
     )
