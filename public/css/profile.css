@@ -1,0 +1,43 @@
+.profile {
+  margin: auto;
+  padding: 20px;
+  width: 90%;
+  height: 100%;
+  background-color: white;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+#d3-graph {
+  margin: 20px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pro-image {
+  /* margin: 10px; */
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-bar {
+  border: 1px solid black;
+  padding: 15px;
+}
+
+.options {
+  padding: 10px;
+  background-color: seagreen;
+}
