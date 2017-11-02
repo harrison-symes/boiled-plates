@@ -7,6 +7,7 @@ import Profile from './Profile'
 import Challenge from './Challenge'
 import Login from './Login'
 import Register from './Register'
+import RecipeList from './recipes/RecipeList'
 
 import Footer from './Footer'
 
@@ -16,6 +17,7 @@ const App = () => (
     <div className='app'>
       <Route path='/' component={Header} />
       <Route exact path='/' component={Banner} />
+      <Route exact path="/recipes" component={RecipeList} />
       <Route path='/profile' component={Profile} />
       <Route path='/login' component={Login} />
       <Route path='/register' component={Register} />

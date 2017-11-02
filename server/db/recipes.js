@@ -2,6 +2,7 @@ const defaultConn = require('./connection')
 
 const getRecipes = (testConn) => {
   const db = testConn || defaultConn
+  console.log('get me recipes')
   return db('recipes')
     .select()
 }
