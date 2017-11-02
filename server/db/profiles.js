@@ -1,11 +1,11 @@
 const defaultConn = require('./connection')
 
-const getGreetings = (testConn) => {
+const getProfiles = (testConn) => {
   const db = testConn || defaultConn
-  return db('greetings')
+  return db('profiles')
     .select()
 }
 
 module.exports = {
-  getGreetings
+  getProfiles
 }

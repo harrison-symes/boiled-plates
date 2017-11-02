@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
 
-const greetingsDb = require('../db/greeting')
+const recipesDb = require('../db/recipes')
 
 router.get('/', (req, res) => {
-  greetingsDb.getGreetings()
-    .then(greetings => {
-      res.json(greetings)
+  recipesDb.getRecipes()
+    .then(recipes => {
+      res.json(recipes)
     })
 })
 
