@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import {connect} from 'react-redux'
+import {connect} from 'react-redux'
 
 import {getRecipes} from '../actions/recipes'
 import RecipeList from './recipes/RecipeList'
@@ -22,22 +22,23 @@ const Recipes = () => {
   )
 }
 
-// const mapStateToProps = (state) => {
-//   return {recipes: state.recipes}
-
-// }
-
-// export default connect(mapStateToProps)(Recipes)
 export default Recipes
 
 // const renderRecipe = (recipe, key) => (
-//   <h1 key={key}>{recipe.text}</h1>
-// )
-
-// const Recipes = ({recipes, dispatch}) => (
-//   <div>
-//     <button onClick={() => dispatch(getRecipes())}>Show Recipes</button>
-//     {recipes.map(renderRecipe)}
-//   </div>
-// )
-
+  //   <h1 key={key}>{recipe.text}</h1>
+  // )
+  
+  // const Recipes = ({recipes, dispatch}) => (
+    //   <div>
+    //     <button onClick={() => dispatch(getRecipes())}>Show Recipes</button>
+    //     {recipes.map(renderRecipe)}
+    //   </div>
+    // )
+    
+    // const mapStateToProps = (state) => {
+    //   return {recipes: state.recipes}
+    
+    // }
+    
+    // export default connect(mapStateToProps)(Recipes)
+    
