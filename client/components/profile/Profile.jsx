@@ -1,5 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Route } from 'react-router-dom'
+
+import Addrecipe from './Addrecipe'
 
 class Profile extends React.Component {
   render () {
@@ -14,11 +17,12 @@ class Profile extends React.Component {
         <div className='post-container'>
           <div className='what-to-do'>
             <button className='options'>Add Your Recipe</button>
+        {/* <Route exact path='/addrecipe' component={Addrecipe} /> */}
             <button className='options'>Host A Kai</button>
             <button className='options'>Add Your Recipe</button>
           </div>
 
-          
+
           <div className='posts'>
             <div className='post-title'>My Kai Today!</div>
             <img src='./images/placeholder.jpg' className='food-image' width='100%' />
@@ -27,7 +31,7 @@ class Profile extends React.Component {
 
 
           <div className='posts'>
-            <div className='post-title'>Try my recipe </div>
+            <div className='post-title'>Try my recipe</div>
             <img src='./images/placeholder.jpg' className='food-image' width='100%' />
             <div className='post-content'>Hey Kai pals, I just came up this recipe that I'd like to share with you. Let me know what you think!</div>
           </div>
