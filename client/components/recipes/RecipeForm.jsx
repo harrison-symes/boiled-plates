@@ -20,7 +20,13 @@ class RecipeForm extends React.Component {
   }
 
   render() {
-
+    return (
+      <div className='recipe-form'>
+        <form onSubmit={this.handleSubmit}>
+          
+        </form>
+      </div>
+    )
   }
 }
 
