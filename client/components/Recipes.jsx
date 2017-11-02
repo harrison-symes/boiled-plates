@@ -7,10 +7,10 @@ const Recipes = () => {
   return (
     <div className='link-recipe'>
       <div className='title-box'>
-        <p id='try-recipe'>Find recipes</p>
+        Find recipes
       </div>
       <div className='recipe-description'>
-        <p id='recipe-d'></p>
+        <p id='recipe-d'>Add this, drain that, cook it up</p>
       </div>
     </div>
   )

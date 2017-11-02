@@ -6,13 +6,15 @@ import Challenge from './Challenge'
 
 import Footer from './Footer'
 
-//=============================
+// =============================
 const App = () => (
   <Router>
     <div className='app'>
       <Header />
-      <Recipes />
-      <Challenge />
+      <div className='flex-container'>
+        <Recipes />
+        <Challenge />
+      </div>
       <Footer />
     </div>
   </Router>

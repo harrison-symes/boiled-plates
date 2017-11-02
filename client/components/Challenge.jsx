@@ -3,8 +3,15 @@ import React from 'react'
 
 const Challenge = () => {
   return (
-    <div>
-      <h1> I'm the challenge component </h1>
+    <div className='link-challenge'>
+      <div className='title-box'>
+        Be in the force!
+      </div>
+
+      <div className='challenge-description'>
+        <p>Join the challenge</p>
+      </div>
+
     </div>
 
   )
