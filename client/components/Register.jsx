@@ -34,7 +34,7 @@ class Register extends React.Component {
         <label>Confirm:
           <input type="password" name="confirm_password" onChange={this.updateDetails} />
         </label><br />
-        <input type="submit" />
+        <input type="submit" value="Sign me up!"/>
       </form>
     )
   }

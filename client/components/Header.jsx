@@ -5,25 +5,18 @@ const Header = () => {
   return (
     <div>
       <header>
+        <Link to='/'>
         <h1>Kai Time!</h1>
+        </Link>
         <div className='user-login'>
-          <Link to='/signup'>
+          <Link to='/register'>
             <span className='login'>Sign Up</span>
           </Link>
-          <span className='login'>Log In</span>
+          <Link to='/login'>
+            <span className='login'>Log In</span>
+          </Link>
         </div>
       </header>
-      <div className='banner'>
-        <div className='quotes'>
-          Why?
-        </div>
-        <div className='quotes'>
-          How?
-        </div>
-        <div className='quotes'>
-          What?
-        </div>
-      </div>
     </div>
   )
 }
