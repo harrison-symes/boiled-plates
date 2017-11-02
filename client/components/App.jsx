@@ -1,6 +1,6 @@
 import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
-import Recipes from './recipes/Recipes'
+import RecipesHome from './RecipesHome'
 import Header from './Header'
 import Banner from './Banner'
 import Profile from './Profile'
@@ -20,7 +20,7 @@ const App = () => (
       <Route path='/login' component={Login} />
       <Route path='/register' component={Register} />
       <div className='flex-container'>
-        <Route exact path='/' component={Recipes} />
+        <Route exact path='/' component={RecipesHome} />
         <Route exact path='/' component={Challenge} />
       </div>
       <Footer />
