@@ -3,12 +3,12 @@ import {HashRouter as Router, Route} from 'react-router-dom'
 import RecipesHome from './RecipesHome'
 import Header from './Header'
 import Banner from './Banner'
-import Profile from './Profile'
+import Profile from './profile/Profile'
 import Challenge from './Challenge'
 import Login from './Login'
 import Register from './Register'
 
-import Footer from './Footer'
+// import Footer from './Footer'
 
 // =============================
 const App = () => (
@@ -23,7 +23,7 @@ const App = () => (
         <Route exact path='/' component={RecipesHome} />
         <Route exact path='/' component={Challenge} />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   </Router>
 )
