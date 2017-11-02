@@ -3,7 +3,7 @@ const router = express.Router()
 
 const profilesDb = require('../db/profiles')
 
-router.get('/profiles', (req, res) => {
+router.get('/', (req, res) => {
   profilesDb.getProfiles()
     .then(profiles => {
       res.json(profiles)
