@@ -1,3 +1,5 @@
+import { RECEIVE_RECIPES } from '../actions'
+
 function recipes (state = [], action) {
   switch (action.type) {
     case 'RECEIVE_RECIPES':

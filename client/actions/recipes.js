@@ -1,5 +1,7 @@
 import request from 'superagent'
 
+export const RECEIVE_RECIPES = 'RECEIVE_RECIPES'
+
 export const receiveRecipes = (recipes) => {
   return {
     type: 'RECEIVE_RECIPES',
@@ -7,7 +9,7 @@ export const receiveRecipes = (recipes) => {
   }
 }
 
-export function getRecipes () {
+export function fetchRecipes () {
   return (dispatch) => {
     request
       .get(`/api/recipes`)
