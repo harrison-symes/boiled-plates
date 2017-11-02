@@ -7,7 +7,8 @@ class RecipeForm extends React.Component {
     super(props)
     this.state = {
       value: '',
-      pictures: { pictures: [] }
+      pictures: { pictures: [] },
+      ingredients: ''
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -39,7 +40,11 @@ class RecipeForm extends React.Component {
             <input type='text' value={this.state.value} onChange={this.handleChange} />
           </label>
           <ImageUploader withIcon={true} buttonText='Choose images' onChange={this.onDrop} imgExtension={['.jpg', '.gif', '.png']} maxFileSize={5242880} />
-          
+          <label>
+            Ingredients:
+            <input type='text' value={this.state.ingredients} onChange={this.handleChange} />
+          </label>
+          <button type='submit'>submit recipie></button>
         </form>
       </div>
     )
