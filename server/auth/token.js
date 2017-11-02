@@ -12,12 +12,10 @@ function issue (req, res) {
       })
     })
     .catch(err => {
-      console.log(err.message)
     })
 }
 
 function createToken (user, secret) {
-  console.log(user)
   return jwt.sign({
     id: user.id,
     username: user.username

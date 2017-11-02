@@ -14,7 +14,6 @@ function createUser (username, password, testDb) {
 }
 function userExists (username, testDb) {
   const db = testDb || connection
-  console.log( 'exists', username )
   return db('users')
     .count('id as n')
     .where('username', username)
@@ -24,7 +23,6 @@ function userExists (username, testDb) {
 }
 
 function getUserByName (username, testDb) {
-  console.log('getbyname', username)
   const db = testDb || connection
   return db('users')
     .where('username', username)
