@@ -1,7 +1,7 @@
 import request from '../utils/api'
 import { saveUserToken } from '../utils/auth'
 
-function requestLogin() {
+function requestLogin () {
   return {
     type: 'LOGIN_REQUEST',
     isFetching: true,
@@ -9,7 +9,7 @@ function requestLogin() {
   }
 }
 
-export function receiveLogin(user) {
+export function receiveLogin (user) {
   return {
     type: 'LOGIN_SUCCESS',
     isFetching: false,
@@ -18,7 +18,7 @@ export function receiveLogin(user) {
   }
 }
 
-function loginError(message) {
+function loginError (message) {
   return {
     type: 'LOGIN_FAILURE',
     isFetching: false,
@@ -27,22 +27,21 @@ function loginError(message) {
   }
 }
 
-export function loginUser(creds) {
+export function loginUser (creds) {
   return dispatch => {
     dispatch(requestLogin(creds))
     return request('post', 'auth/login', creds)
       .then((response) => {
         if (response.status === 403) {
-          alert("Try Again!")
+          alert('Try Again!')
           dispatch(loginError(response.body.message))
           return Promise.reject(response.body.message)
         } else {
           const userInfo = saveUserToken(response.body.token)
           dispatch(receiveLogin(userInfo))
-          document.location = "/#/"
+          document.location = '/#/'
         }
-      }).catch(err => alert("Try Again!")
-
-      )
+      })
+      .catch(err => alert(err))
   }
 }

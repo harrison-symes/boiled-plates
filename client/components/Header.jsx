@@ -4,9 +4,6 @@ import {Link} from 'react-router-dom'
 import {logoutUser} from '../actions/logout'
 
 const Header = (props) => {
-
-  console.log(props)
-
   return (
     <div>
       <header>
@@ -17,10 +14,10 @@ const Header = (props) => {
         <div className='Nav'>
           {props.auth.isAuthenticated
             ? <div>
-               <p>You are logged in as : {props.auth.user.username}</p>
+              <p>You are logged in as : {props.auth.user.username}</p>
               <button onClick={() => props.dispatch(logoutUser())}>Logout</button>
-              </div>
-            : <div> 
+            </div>
+            : <div>
               <Link to='/register'>
                 <span className='login'>Sign Up</span>
               </Link>
