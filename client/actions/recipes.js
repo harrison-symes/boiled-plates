@@ -9,7 +9,7 @@ export const receiveRecipes = (recipes) => {
   }
 }
 
-export function fetchRecipes () {
+export function getRecipes () {
   return (dispatch) => {
     request
       .get(`/api/recipes`)

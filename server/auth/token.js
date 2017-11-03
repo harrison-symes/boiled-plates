@@ -5,14 +5,16 @@ var verifyJwt = require('express-jwt')
 function issue (req, res) {
   getUserByName(req.body.username)
     .then(user => {
-      var token = createToken(user, process.env.JWT_SECRET)
-      res.json({
-        message: 'Authentication successful',
-        token
-      })
+      if (!user) res.status(403).json({message: 'User does not exist'})
+      else {
+        var token = createToken(user, process.env.JWT_SECRET)
+        res.json({
+          message: 'Authentication successful',
+          token
+        })
+      }
     })
-    .catch(err => {
-    })
+    .catch(err => res.sendStatus(500))
 }
 
 function createToken (user, secret) {
