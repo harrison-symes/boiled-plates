@@ -23,5 +23,4 @@ const Recipes = ({recipes, dispatch}) => {
   )
 }
 
-
 export default connect()(Recipes)

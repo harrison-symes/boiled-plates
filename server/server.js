@@ -14,10 +14,10 @@ server.use(cors('*'))
 server.use(bodyParser.json())
 server.use(express.static(path.join(__dirname, '../public')))
 
+server.use('/api/auth', auth)
+
 server.use('/api/recipes', recipes)
 
 server.use('/api/profiles', profiles)
-
-server.use('/api/auth', auth)
 
 module.exports = server
