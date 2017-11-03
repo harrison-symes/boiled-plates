@@ -6,10 +6,10 @@ import {getRecipes} from '../../actions/recipes'
 import Recipe from './Recipe'
 
 class RecipeList extends React.Component {
-  componentDidMount() {
+  componentDidMount () {
     this.props.dispatch(getRecipes())
   }
-  render() {
+  render () {
     const {recipes} = this.props
     return (
       <div className='recipe-list'>
@@ -32,5 +32,3 @@ const mapStateToProps = ({recipes}) => {
 }
 
 export default connect(mapStateToProps)(RecipeList)
-
-
