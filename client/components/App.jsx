@@ -20,7 +20,7 @@ const App = () => (
       <Route path='/register' component={Register} />
       <Route path='/profile' component={Profile} />
       <div className='flex-container'>
-        {/* <Route exact path='/' component={RecipesHome} /> */}
+        <Route exact path='/' component={RecipesHome} />
         <Route exact path='/' component={Challenge} />
       </div>
       {/* <Footer /> */}
