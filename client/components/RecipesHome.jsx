@@ -15,7 +15,8 @@ const Recipes = ({recipes, dispatch}) => {
           <p id='recipe-d'>Add this, drain that, cook it up</p>
         </div>
       <div>
-        <Link to="/recipes">Recipes
+        <Link to="/recipes">
+          Recipes
         </Link>
       </div>
     </div>

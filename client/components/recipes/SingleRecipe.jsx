@@ -1,5 +1,6 @@
 import React from 'react'
 import { Switch, Route, Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 function SingleRecipe(props) {
   const recipe = props.recipe
@@ -15,4 +16,11 @@ function SingleRecipe(props) {
   )
 }
 
-export default SingleRecipe
+const mapStateToProps = (state, ownProps) => {
+  const id = Number(ownProps.match.params.id)
+  return { 
+    recipe: state.recipes.find(recipe => id === recipe.id) 
+  }
+}
+
+export default connect(mapStateToProps)(SingleRecipe)

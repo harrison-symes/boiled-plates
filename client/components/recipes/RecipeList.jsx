@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
-import Recipe from './Recipe'
 
 import {getRecipes} from '../../actions/recipes'
+import Recipe from './Recipe'
 
 class RecipeList extends React.Component {
   componentDidMount() {
@@ -13,7 +13,7 @@ class RecipeList extends React.Component {
     const {recipes} = this.props
     return (
       <div className='recipe-list'>
-        <h1>Hello</h1>
+        <h1>Recipes Galore</h1>
         {recipes.map(recipe => {
           return (
             <Recipe recipe={recipe} />
