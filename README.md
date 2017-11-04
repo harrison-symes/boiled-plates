@@ -8,10 +8,10 @@ Our team is still working on this project.
 **Install / Running**
 
 `git clone https://github.com/Kai-Time/kai-time Kai Time`  
-`cd Kai-time  `  
-npm install  
-npm run dev  
-visit the app at http://localhost:3000
+`cd Kai-time`  
+`npm install`  
+`npm run dev`  
+`visit the app at http://localhost:3000`
 
 **Description**
 
@@ -19,10 +19,10 @@ An application that displays and searches through vegetarian recipes and lets yo
 
 Authors
 
-Skye Simpson - Product owner, full stack developer and tester  
-Dazyang - Git master, Full stack developer and tester  
-Aaron Mackdonald - Time master, Full stack developer and tester  
-Rajal Kumar -  Scrum master, Full stack developer and tester  
+**Skye Simpson** - Product owner, full stack developer and tester  
+**Daz Yang** - Git master, Full stack developer and tester  
+**Aaron Mackdonald** - Time master, Full stack developer and tester  
+**Rajal Kumar** -  Scrum master, Full stack developer and tester  
 
 App main features:
 
