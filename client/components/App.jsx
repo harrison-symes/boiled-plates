@@ -15,7 +15,6 @@ import RecipeForm from './recipes/RecipeForm'
 
 // import Footer from './Footer'
 
-// =============================
 const App = () => (
   <Router>
     <div className='app'>
