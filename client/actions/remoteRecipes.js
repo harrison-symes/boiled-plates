@@ -9,10 +9,10 @@ export const receiveRemoteRecipes = (recipes) => {
   }
 }
 
-const objBuilder = ({ image_url, source_url, title, social_rank, f2f_url }) => {
+const objBuilder = ({ image_url, recipe_id, title, social_rank, f2f_url }) => {
   return {
     image: image_url,
-    source: source_url,
+    recipe_id: recipe_id,
     title: title,
     rank: social_rank,
     f2f: f2f_url

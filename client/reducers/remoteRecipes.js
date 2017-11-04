@@ -1,11 +1,11 @@
 import { RECEIVE_REMOTE_RECIPES } from '../actions/remoteRecipes'
 
 const initialState = {
-  forecast: {
-    base: {},
-    mid: {},
-    upper: {}
-  }
+  image: { },
+  recipe_id: { },
+  title: { },
+  rank: { },
+  f2f: { }
 }
 
 export default (recipe = initialState, action) => {
