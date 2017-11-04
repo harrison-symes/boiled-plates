@@ -123,11 +123,11 @@ h1 {
 }
 
 .recipe-tickets {
-  padding: 10px;
+  /* padding: 0px 10px 0 10px; */
   border: 1px solid black;
   /* Comment border out when need to */
   width: 300px;
-  height: 200px;
+  /* height: 200px; */
 }
 
 .title-box {
@@ -139,6 +139,34 @@ h1 {
   font-size: 18px;
   text-align: center;
   background-color: white;
+}
+
+
+/* >>>>> #/recipes <<<<< */
+.user-recipe-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 50px;
+  padding: 0 0 0 10px;
+  /* border: 1px solid black; */
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  background-color: #007A3D;
+  background-color: white;
+}
+
+.check-it-out {
+  padding: 10px;
+  height: 30px;
+  padding: 0 0 0 10px;
+  /* border: 1px solid black; */
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  background-color: #007A3D;
 }
 
 .recipe-description {
