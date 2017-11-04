@@ -1,5 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import jump from 'jump.js'
 // import { Route } from 'react-router-dom'
 
 // import Addrecipe from './Addrecipe'
@@ -8,6 +10,12 @@ class Profile extends React.Component {
   render () {
     return (
       <div className='profile'>
+        
+        <a className="top-button" href="#">
+          <img className="top-button-icon" src="images/top-button.svg" /> 
+          <span className="top-button-text">Back to Top</span>
+          </a>
+
         <div className='side-bar'>
           <div id='d3-graph'>
             <div id='pro-image'>User's Photo</div>
@@ -16,7 +24,7 @@ class Profile extends React.Component {
         </div>
         <div className='post-container'>
           <div className='what-to-do'>
-            <button className='options'>Add Your Recipe</button>
+            <Link to='/form'><button className='options'>Add Your Recipe</button></Link>
             <button className='options'>Host A Kai</button>
             <button className='options'>Favourite List</button>
           </div>
