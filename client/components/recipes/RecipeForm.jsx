@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 // import ImageUploader from 'react-images-upload'
 
 class RecipeForm extends React.Component {
@@ -12,25 +13,36 @@ class RecipeForm extends React.Component {
       instructions: ''
     }
 
-    this.handleChange = this.handleChange.bind(this)
+    this.valueChange = this.valueChange.bind(this)
+    this.ingredientsChange = this.ingredientsChange.bind(this)
+    this.instructionsChange = this.instructionsChange.bind(this)
     this.handleSubmit =this.handleSubmit.bind(this)
     this.onDrop = this.onDrop.bind(this)
   }
 
-  handleChange(event) {
+  valueChange(event) {
     this.setState({value: event.target.value})
   }
 
-  handleSubmit(event) {
-    alert('Your recipie has been submitted' + this.state.value)
-    event.preventDefault()
+  ingredientsChange(event) {
+    this.setState({ ingredients: event.target.value })
+  }
+
+  instructionsChange(event) {
+    this.setState({ instructions: event.target.value })
   }
 
   onDrop(picture) {
     this.setState({
       pictures: this.state.pictures.concat(picture)
     })
-  } 
+  }
+    
+  handleSubmit(event) {
+    alert('Your recipie has been submitted')
+    event.preventDefault()
+  }
+
 
   render() {
     return (
@@ -38,16 +50,16 @@ class RecipeForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             Name:
-            <input type='text' value={this.state.value} onChange={this.handleChange} />
+            <input type='text' value={this.state.value} onChange={this.valueChange} />
           </label>
           {/* <ImageUploader withIcon={true} buttonText='Choose images' onChange={this.onDrop} imgExtension={['.jpg', '.gif', '.png']} maxFileSize={5242880} /> */}
           <label>
             Ingredients:
-            <input type='text' value={this.state.ingredients} onChange={this.handleChange} />
+            <input type='text' value={this.state.ingredients} onChange={this.ingredientsChange} />
           </label>
           <label>
             Instructions:
-            <input type='text' value={this.state.instructions} onChange={this.handleChange} />
+            <input type='text' value={this.state.instructions} onChange={this.instructionsChange} />
           </label>
           <button type='submit'>submit recipe</button>
         </form>
