@@ -6,6 +6,8 @@ exports.up = function(knex, Promise) {
     table.string('firstname')
     table.string('lastname')
     table.string('email')
+    table.string('user_progress')
+    table.string('user_posts')
   })
 }
 
