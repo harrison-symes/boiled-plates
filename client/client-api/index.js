@@ -1,9 +1,9 @@
 import request from 'superagent'
 
-export function searchRecipeInfo (recipeID, callback) {
-  console.log(recipeID)
+export function searchRecipeInfo (ingredient, callback) {
+  console.log(ingredient)
   request
-    .get(`http://food2fork.com/api/get?key=04a1bbc8b9e4709129e5f7455aa51d17&rId=${recipeID}`)
+    .get(`http://localhost:3000/api/v1/search/${ingredient}`)
     .end((err, res) => {
       if (err) {
         callback(err)
@@ -13,6 +13,3 @@ export function searchRecipeInfo (recipeID, callback) {
       }
     })
 }
-
-export function getRecipeInfo
-// API Key: 04a1bbc8b9e4709129e5f7455aa51d17 

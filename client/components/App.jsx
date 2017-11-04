@@ -9,7 +9,7 @@ import Login from './Login'
 import Register from './Register'
 import RecipeList from './recipes/RecipeList'
 import SingleRecipe from './recipes/SingleRecipe'
-import External from './External'
+// import External from './External'
 
 // import Footer from './Footer'
 
@@ -25,7 +25,7 @@ const App = () => (
       <Route path='/login' component={Login} />
       <Route path='/register' component={Register} />
       <Route path='/profile' component={Profile} />
-      <Route path='/external' component={External} />
+      {/* <Route path='/external' component={External} /> */}
       <div className='flex-container'>
         <Route exact path='/' component={RecipesHome} />
         <Route exact path='/' component={Challenge} />

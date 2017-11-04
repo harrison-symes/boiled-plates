@@ -1,11 +1,11 @@
-import { RECEIVE_REMOTE_RECIPES } from '../actions'
+import { RECEIVE_REMOTE_RECIPES } from '../../actions/remote-recipes.js'
 
-export default () => {
+export default (searchING = '', action) => {
   switch (action.type) {
-    case RECIEVE_REMOTE_RECIPES:
+    case RECEIVE_REMOTE_RECIPES:
       return action.recipes
 
     default:
-      return recipes
+      return searchING
   }
 }

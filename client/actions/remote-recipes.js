@@ -1,6 +1,6 @@
 import { searchRecipeInfo } from '../client-api'
 
-const RECEIVE_REMOTE_RECIPES = 'RECEIVE_REMOTE_RECIPES'
+export const RECEIVE_REMOTE_RECIPES = 'RECEIVE_REMOTE_RECIPES'
 
 export const receiveRemoteRecipes = (recipes) => {
   return {
@@ -24,6 +24,12 @@ const yourRecipe = ({ recipes }) => {
     recipes: objBuilder.recipes
   }
 }
+
+// export function searchRecipes (searchIng) {
+  // return (dispatch) => {
+    // dispatch(receiveRemoteRecipes(searchIng.toLowerCase()))
+  // }
+// }
 
 export function searchRecipes (ingredient) {
   return (dispatch) => {
