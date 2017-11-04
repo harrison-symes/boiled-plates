@@ -3,7 +3,6 @@ const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const request = require('superagent')
 
 const recipes = require('./routes/recipes')
 const profiles = require('./routes/profiles')
