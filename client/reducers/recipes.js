@@ -1,4 +1,4 @@
-import { RECEIVE_RECIPES } from '../actions'
+import { RECEIVE_RECIPES } from '../actions/recipes'
 
 function recipes (state = [], action) {
   switch (action.type) {

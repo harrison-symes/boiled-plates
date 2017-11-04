@@ -20,4 +20,18 @@ server.use('/api/recipes', recipes)
 
 server.use('/api/profiles', profiles)
 
+server.use('api/v1/searchfood2fork/:id', (req, res) => {
+  const id = req.params.id
+  request
+    .get(`http://food2fork.com/api/get?key=04a1bbc8b9e4709129e5f7455aa51d17&rId=${id}`)
+    .end((err, res) => {
+      if (err) {
+        callback(err)
+        console.log(err)
+      } else {
+        res.json(res.body)
+      }
+    })
+})
+
 module.exports = server
