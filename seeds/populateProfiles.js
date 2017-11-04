@@ -9,6 +9,7 @@ exports.seed = function (knex, Promise) {
           user_id: 1,
           firstname: 'Aaron',
           lastname: 'Macdonald',
+          image: '',
           email: 'aaron@gmail.com',
           user_progress: 0,
           user_posts: [{ Added_Recipe: '' }, { Host_A_Kai: '' }, { Share_Post: '' }, { Fav_List: '' }]

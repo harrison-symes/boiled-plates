@@ -48,7 +48,7 @@ class RecipeList extends React.Component {
           </div>
         </div>
 
-        <h3>Check our user's recipe</h3>
+        <h3>User's recipe</h3>
         <div className='flex-container'>
           {recipes.map(recipe => {
             return (
