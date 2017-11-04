@@ -18,7 +18,7 @@ class Profile extends React.Component {
 
         <div className='side-bar'>
           <div id='d3-graph'>
-            <div id='pro-image'>User's Photo</div>
+            <div id='pro-image'>props.profile.image</div>
           </div>
           <div className='badgets'>Badgets goes here</div>
         </div>
