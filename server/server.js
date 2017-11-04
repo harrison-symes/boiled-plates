@@ -19,7 +19,7 @@ server.use('api/v1/search/:ingredient', (req, res) => {
     .end((err, res) => {
       if (err) {
         callback(err)
-        console.log(err)
+        // console.log(err)
       } else {
         res.json(res.body)
       }
