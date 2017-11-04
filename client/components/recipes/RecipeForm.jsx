@@ -7,8 +7,9 @@ class RecipeForm extends React.Component {
     super(props)
     this.state = {
       value: '',
-      pictures: { pictures: [] },
-      ingredients: ''
+      pictures: [],
+      ingredients: '',
+      instructions: ''
     }
 
     this.handleChange = this.handleChange.bind(this)
