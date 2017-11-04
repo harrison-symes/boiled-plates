@@ -6,7 +6,6 @@ import { getRecipe } from '../../actions/recipes'
 import SingleRecipe from './SingleRecipe.jsx'
 
 const Recipe = (props) => {
-  // console.log(props)
   return (
     <Link to={`/recipes/${props.recipe.id}`}>
       <div className=' '>

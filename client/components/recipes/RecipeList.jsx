@@ -7,6 +7,7 @@ import Recipe from './Recipe'
 import {searchRecipes} from '../../actions/remote-recipes'
 
 class RecipeList extends React.Component {
+
   constructor (props) {
     super(props)
     this.state = {
@@ -26,29 +27,45 @@ class RecipeList extends React.Component {
     this.props.dispatch(searchRecipes(e.target.value))
   }
 
+ 
   render () {
     const {recipes} = this.props
     return (
-      <div className='recipe-list'>
-        <h1>Recipes Galore</h1>
-        {recipes.map(recipe => {
-          return (
-            <Recipe recipe={recipe} />
-          )
-        })}
+      <div>
+        <div className='recipe-banner'>
+          Photo slide show?
+        </div>
+
+        <h3>Find a recipe</h3>
         <form>
-          <input type='text' onChange = {(e) => this.getRemoteRecipe(e)} value = {this.state.searchIngredient} placeholder="Search a recipe" className="search-bar"/>
-          {/* <button onClick={this.getRemoteRecipe}>
-            Search
-          </button> */}
+        <input type='text' className='input-bar' onChange = {(e) => this.getRemoteRecipe(e)} value = {this.state.searchIngredient} placeholder="Search a recipe" className="search-bar"/>
         </form>
+          <div className='flex-container'>
+          Search result flys in here 
+          <div className='recipe-tickets'>
+            Result one
+          </div>
+          <div className='recipe-tickets'>
+            Result two
+          </div>
+        </div>
+
+        <h3>Check our user's recipe</h3>
+        <div className='flex-container'>
+          {recipes.map(recipe => {
+            return (
+              <div className='recipe-tickets'>
+                <Recipe recipe={recipe} />
+              </div>
+            )
+          })}
+        </div>
       </div>
     )
   }
 }
 
 const mapStateToProps = ({recipes}) => {
-  // console.log({recipes})
   return {
     recipes
   }
