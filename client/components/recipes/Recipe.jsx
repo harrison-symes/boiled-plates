@@ -9,11 +9,10 @@ const Recipe = (props) => {
   console.log(props)
   return (
     <Link to={`/recipes/${props.recipe.id}`}>
-      <div className=' '>
-        <img src={props.recipe.image} alt='' />
-         <br />
-        <p>{props.recipe.name}</p>
-      </div>
+
+      <img src={props.recipe.image} alt='' />
+      <br />
+      <p>{props.recipe.name}</p>
     </Link>
   )
 }

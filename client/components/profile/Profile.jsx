@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 // import { Route } from 'react-router-dom'
 
-// import Addrecipe from './Addrecipe'
+// import UserProgress from './UserProgress'
 
 class Profile extends React.Component {
   render () {
