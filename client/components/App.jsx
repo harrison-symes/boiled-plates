@@ -11,6 +11,8 @@ import RecipeList from './recipes/RecipeList'
 import SingleRecipe from './recipes/SingleRecipe'
 import RecipeForm from './recipes/RecipeForm'
 
+// import UserProgress from './profile/UserProgress'
+
 // import Footer from './Footer'
 
 // =============================
@@ -24,11 +26,11 @@ const App = () => (
       <Route path='/profile' component={Profile} />
       <Route path='/login' component={Login} />
       <Route path='/register' component={Register} />
-      <Route path='/profile' component={Profile} />
       <Route path='/form' component={RecipeForm} />
       <div className='flex-container'>
         <Route exact path='/' component={RecipesHome} />
         <Route exact path='/' component={Challenge} />
+        {/* <Route path='/testchart' component={UserProgress} /> */}
       </div>
       {/* <Footer /> */}
     </div>
