@@ -44,6 +44,10 @@ class RecipeForm extends React.Component {
             Ingredients:
             <input type='text' value={this.state.ingredients} onChange={this.handleChange} />
           </label>
+          <label>
+            Instructions:
+            <input type='text' value={this.state.instructions} onChange={this.handleChange} />
+          </label>
           <button type='submit'>submit recipe</button>
         </form>
       </div>
