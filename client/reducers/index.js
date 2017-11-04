@@ -1,7 +1,11 @@
 import {combineReducers} from 'redux'
 
-import greetings from './greetings' 
+import recipes from './recipes'
+import auth from './auth'
+import remoteRecipes from './remoteRecipes'
 
 export default combineReducers({
-  greetings
+  recipes,
+  auth,
+  remoteRecipes
 })

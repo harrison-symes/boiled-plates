@@ -1,0 +1,192 @@
+/* html {
+  
+} */
+
+.app {
+  margin: 0px;
+  padding: 0px;
+  /* position: relative; */
+  width: 100%;
+  min-height: 100%
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: seagreen;
+}
+
+body {
+  /* position: relative; */
+  margin: 0 0 50px;
+  background-color: #E0E0E0;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+}
+
+header {
+  margin: auto;
+  padding: 5px;
+  /* background-color: white; */
+  width: 80%;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: baseline;
+} 
+
+h1 {
+  height: 30px;
+  font-size: 48px;
+  font-family: 'Oleo Script', cursive;
+  font-weight: bold;
+} 
+
+.login {
+  margin: 10px;
+  font-weight: bold;
+}
+
+.banner {
+  margin: auto;
+  padding: 20px;
+  width: 100%;
+  height: 350px;
+  background: white;
+  
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.recipe-banner {
+  margin: auto;
+  padding: 20px;
+  width: 100%;
+  height: 200px;
+  /* background: white; */
+  background-image: url('../images/placeholder.jpg');
+  background-size: contain; 
+}
+
+.quotes {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  width: 300px;
+  height: 45%;
+  padding: 20px;
+ }
+
+/* ==========FLEX CONTAINER========== */
+.flex-container {
+  padding: 15px;
+  border: 1px solid black; 
+  /* Comment border out when need to */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.flex-container2 {
+  padding: 15px;
+  border: 1px solid black; 
+  /* Comment border out when need to */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+/* =========RECIPE RELATED========= */
+
+.link-recipe {
+  display: flex;
+  flex-flow: column;
+  /* justify-content: flex-end; */
+  margin-top: 15px;
+  width: 650px;
+  height: 300px;
+  /* border: 1px solid black; */
+  background-color: #FFFFFF;
+  background-image: url('../images/placeholder.jpg');
+  background-size: cover;
+}
+
+.input-bar {
+  width: 80%;
+  height: 30px;
+  text-align: center;
+
+}
+
+.recipe-tickets {
+  padding: 10px;
+  border: 1px solid black;
+  /* Comment border out when need to */
+  width: 300px;
+  height: 200px;
+}
+
+.title-box {
+  padding: 10px;
+  height: 30px;
+  padding: 0 0 0 10px;
+  /* border: 1px solid black; */
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  background-color: white;
+}
+
+.recipe-description {
+  /* bottom: 0; */
+  position: relative;
+  height: 100px;
+  background-color: #288368;
+  opacity: 0.7;
+  text-align: center;
+}
+
+/* ==========Challenge========== */
+
+.link-challenge {
+  display: flex;
+  flex-flow: column;
+  /* justify-content: flex-end; */
+  margin-top: 15px;
+  width: 650px;
+  height: 300px;
+  /* border: 1px solid black; */
+  background-color: white;
+  background-image: url('../images/challenge.jpg');
+  background-size: cover;
+}
+
+.challenge-description {
+  /* align-items: flex-start; */
+  height: 100px;
+  background-color: #288368;
+  opacity: 0.7;
+  text-align: center;
+}
+
+
+
+/* ==========FOOTER========== */
+footer{
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1B1B1B;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  height: 50px;
+}
