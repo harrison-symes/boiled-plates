@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { logoutUser } from '../actions/logout'
 
-function Nav(props) {
+function Nav (props) {
   return (
     <div className="Nav">
       <Link to="/">Home</Link>{" | "}
