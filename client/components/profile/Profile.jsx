@@ -11,9 +11,9 @@ class Profile extends React.Component {
     return (
       <div className='profile'>
         
-        <a className="top-button" href="#">
-          <img className="top-button-icon" src="images/top-button.svg" /> 
-          <span className="top-button-text">Back to Top</span>
+        <a className="top-button" href="#/profile" onClick={() => jump('.post-title')}>
+          <img className="top-button-icon" src="images/down.png"height='30px'width='30px' /> 
+          <span className="top-button-text"></span>
           </a>
 
         <div className='side-bar'>
