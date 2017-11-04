@@ -10,6 +10,8 @@ import Register from './Register'
 import RecipeList from './recipes/RecipeList'
 import SingleRecipe from './recipes/SingleRecipe'
 
+// import UserProgress from './profile/UserProgress'
+
 // import Footer from './Footer'
 
 // =============================
@@ -26,6 +28,7 @@ const App = () => (
       <div className='flex-container'>
         <Route exact path='/' component={RecipesHome} />
         <Route exact path='/' component={Challenge} />
+        {/* <Route path='/testchart' component={UserProgress} /> */}
       </div>
       {/* <Footer /> */}
     </div>
