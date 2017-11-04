@@ -25,7 +25,6 @@ class RecipeList extends React.Component {
 }
 
 const mapStateToProps = ({recipes}) => {
-  console.log({recipes})
   return {
     recipes
   }
