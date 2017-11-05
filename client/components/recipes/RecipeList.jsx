@@ -23,13 +23,6 @@ class RecipeList extends React.Component {
     this.props.dispatch(getRecipes())
   }
 
-  // getRemoteRecipe (e) {
-  //   this.setState({
-  //     searchIngredient: e.target.value
-  //   })
-  //   this.props.dispatch(searchRecipes(e.target.value))
-  // }
-
   addToSearch (e) {
     e.preventDefault()
     this.props.dispatch(searchRecipes(this.state.searchIngredient, (recipes) => {
