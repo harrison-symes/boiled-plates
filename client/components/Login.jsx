@@ -1,13 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { loginUser } from '../actions/login'
+import { Redirect } from 'react-router'
+import Profile from './profile/Profile'
 
 class Login extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
       username: '',
-      password: ''
+      password: '',
+
     }
     this.updateDetails = this.updateDetails.bind(this)
     this.submit = this.submit.bind(this)
