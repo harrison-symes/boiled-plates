@@ -44,9 +44,9 @@ exports.seed = function (knex, Promise) {
         { id: 5,
           user_id: 5,
           firstname: 'Gordon',
-          lastname: 'Ramsey',
-          image: '',
-          email: 'ramsy@gmail.com',
+          lastname: 'Ramsay',
+          image: './images/profile_images/GordonRamsay.jpg',
+          email: 'ramsay@gmail.com',
           user_progress: 0,
           user_posts: [{ Added_Recipe: '' }, { Host_A_Kai: '' }, { Share_Post: '' }, { Fav_List: '' }]
         }
