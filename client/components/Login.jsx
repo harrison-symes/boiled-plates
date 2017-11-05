@@ -9,7 +9,7 @@ class Login extends React.Component {
     super(props)
     this.state = {
       username: '',
-      password: '',
+      password: ''
 
     }
     this.updateDetails = this.updateDetails.bind(this)
@@ -34,6 +34,7 @@ class Login extends React.Component {
         </label><br />
         <input type="submit" />
       </form>
+
     )
   }
 }
