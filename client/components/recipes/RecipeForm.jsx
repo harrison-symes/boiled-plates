@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-// import ImageUploader from 'react-images-upload'
 import {addNewRecipe} from '../../actions/addRecipe'
 
 class RecipeForm extends React.Component {
@@ -19,6 +18,7 @@ class RecipeForm extends React.Component {
     this.onDrop = this.onDrop.bind(this)
   }
 
+  // Legit cannot remember why this is commented out anymore, but it sends back errors.
   // onChange(event) {
   //   const state = this.state
   //   state[event.target.]
@@ -35,7 +35,7 @@ class RecipeForm extends React.Component {
       pictures: this.state.pictures.concat(picture)
     })
   }
-    
+  //Unsure if this is set up right?
   handleSubmit(event) {
     const { name, ingredients, instructions } = this.state
     const newRecipe = { name, ingredients, instructions }
@@ -54,7 +54,6 @@ class RecipeForm extends React.Component {
               Name:
               <input type='text' name='name' placeholder='Recipe name' onChange={this.handleChange} />
             </label>
-            {/* <ImageUploader withIcon={true} buttonText='Choose images' onChange={this.onDrop} imgExtension={['.jpg', '.gif', '.png']} maxFileSize={5242880} /> */}
             <label>
               Ingredients:
               <input type='text' name='ingredients' placeholder='Ingredients required' onChange={this.handleChange} />

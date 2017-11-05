@@ -6,6 +6,7 @@ const initialState = {
   instructions: ''
 }
 
+//Unsure of assigns, guessing its setting default to an empty string? I had followed this through on a web tutorial. 
 export default (state = initialState, action) => {
   switch(action.type) {
     case ADD_RECIPE:

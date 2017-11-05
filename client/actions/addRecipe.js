@@ -15,6 +15,7 @@ export const receiveNewRecipe = () => {
   }
 }
 
+//first Async action I made didn't send back any errors
 export function addedRecipe() {
   return (dispatch) => {
     request
@@ -29,10 +30,11 @@ export function addedRecipe() {
   }
 }
 
+//second Async action, this one returns a 404 (Not found after execution)
 export function addNewRecipe(event) {
   return (dispatch) => {
     dispatch(addRecipe())
-    request('post', '/form', event)
+    request('post', '/api/form', event)
       .then(res => {
         dispatch(receiveNewRecipe())
       })
