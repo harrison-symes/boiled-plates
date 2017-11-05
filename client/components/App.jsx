@@ -11,7 +11,7 @@ import RecipeList from './recipes/RecipeList'
 import SingleRecipe from './recipes/SingleRecipe'
 import RecipeForm from './recipes/RecipeForm'
 
-// import UserProgress from './profile/UserProgress'
+// import UserProgress from './profile/UserProgress.jsx'
 
 // import Footer from './Footer'
 

@@ -16,13 +16,13 @@
   height: 300px;
   border: 1px solid black;
   border-radius: 50%;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 #pro-image {
-  /* margin: 10px; */
+  /* margin: -200px; */
   width: 200px;
   height: 200px;
   border: 1px solid black;
