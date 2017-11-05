@@ -5,6 +5,8 @@ import {connect} from 'react-redux'
 import {getRecipes} from '../../actions/recipes'
 import Recipe from './Recipe'
 import {searchRecipes} from '../../actions/remoteRecipes'
+import {searchRecipeInfo} from '../../client-api/'
+import RemoteRecipe from './RemoteRecipe'
 
 class RecipeList extends React.Component {
   constructor (props) {
@@ -12,18 +14,35 @@ class RecipeList extends React.Component {
     this.state = {
       searchIngredient: ''
     }
-    this.getRemoteRecipe = this.getRemoteRecipe.bind(this)
+    // this.getRemoteRecipe = this.getRemoteRecipe.bind(this),
+    this.handleOnChange = this.handleOnChange.bind(this)
+    this.addToSearch = this.addToSearch.bind(this)
   }
 
   componentDidMount () {
     this.props.dispatch(getRecipes())
   }
 
-  getRemoteRecipe (e) {
+  // getRemoteRecipe (e) {
+  //   this.setState({
+  //     searchIngredient: e.target.value
+  //   })
+  //   this.props.dispatch(searchRecipes(e.target.value))
+  // }
+
+  addToSearch (e) {
+    e.preventDefault()
+    this.props.dispatch(searchRecipes(this.state.searchIngredient, (recipes) => {
+      const f2fresult = recipes
+      console.log(f2fresult)
+      this.setState({ searchIngredient: f2fresult })
+    }))
+  }
+
+  handleOnChange (e) {
     this.setState({
       searchIngredient: e.target.value
     })
-    this.props.dispatch(searchRecipes(e.target.value))
   }
 
   render () {
@@ -35,11 +54,13 @@ class RecipeList extends React.Component {
         </div>
 
         <h3>Find a recipe</h3>
-        <form>
-          <input type='text' className='input-bar' onChange = {(e) => this.getRemoteRecipe(e)} value = {this.state.searchIngredient} placeholder="Search a recipe" className="search-bar"/>
+        <form onSubmit={this.addToSearch}>
+          <input type='text' className='input-bar' placeholder="Search a recipe" value={this.state.searchIngredient} onChange={(e) => this.handleOnChange(e)}/>
+          <input type='submit' value='Search' />
         </form>
         <div className='flex-container'>
           Search result flys in here
+          <RemoteRecipe/>
           <div className='recipe-tickets'>
             Result one
           </div>

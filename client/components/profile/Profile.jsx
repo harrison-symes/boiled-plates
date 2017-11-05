@@ -10,11 +10,11 @@ class Profile extends React.Component {
   render () {
     return (
       <div className='profile'>
-        
+
         <a className="top-button" href="#/profile" onClick={() => jump('.post-title')}>
-          <img className="top-button-icon" src="images/down.png"height='30px'width='30px' /> 
+          <img className="top-button-icon" src="images/down.png"height='30px'width='30px' />
           <span className="top-button-text"></span>
-          </a>
+        </a>
 
         <div className='side-bar'>
           <div id='d3-graph'>

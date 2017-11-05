@@ -10,6 +10,7 @@ import Register from './Register'
 import RecipeList from './recipes/RecipeList'
 import SingleRecipe from './recipes/SingleRecipe'
 import RecipeForm from './recipes/RecipeForm'
+import RemoteRecipe from './recipes/RemoteRecipe'
 
 // import UserProgress from './profile/UserProgress'
 
@@ -22,6 +23,7 @@ const App = () => (
       <Route exact path='/' component={Banner} />
       <Route exact path="/recipes" component={RecipeList} />
       <Route exact path="/recipes/:id" component={SingleRecipe} />
+      <Route path='/remoterecipes' component={RemoteRecipe} />
       <Route path='/profile' component={Profile} />
       <Route path='/login' component={Login} />
       <Route path='/register' component={Register} />

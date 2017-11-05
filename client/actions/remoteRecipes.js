@@ -19,24 +19,27 @@ const objBuilder = ({ image_url, recipe_id, title, social_rank, f2f_url }) => {
   }
 }
 
-const yourRecipe = ({ recipes }) => {
-  return {
-    recipes: objBuilder.recipes
-  }
-}
+// const yourRecipe = ({ recipes }) => {
+//   // console.log({ recipes })
+//   return {
+//     recipes: objBuilder.recipes
+//   }
+// }
 
-export function searchRecipes (ingredient) {
+export function searchRecipes (ingredient, callback) {
   return (dispatch) => {
-    searchRecipeInfo(ingredient, (err, recipes) => {
+    searchRecipeInfo(ingredient, (err, results) => {
       if (!err) {
-        console.log({ recipes })
-        const recipeObj = {
-          title: recipes.title,
-          ingredients: recipes.ingedients,
-          yum: yourRecipe(recipes.recipes[0][1][2][3][4])
-        }
-        console.log(recipeObj)
-        dispatch(receiveRemoteRecipes(recipeObj))
+        console.log('before', results.recipes)
+        const recipes = results.recipes.map(recipe => {
+          return objBuilder(recipe)
+        })
+        console.log('after', recipes)
+
+        callback(recipes)
+        dispatch(receiveRemoteRecipes(recipes))
+      } else {
+        console.log(err)
       }
     })
   }
