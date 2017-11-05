@@ -1,19 +1,19 @@
 import { RECEIVE_REMOTE_RECIPES } from '../actions/remoteRecipes'
 
-const initialState = {
-  image: { },
-  recipe_id: { },
-  title: { },
-  rank: { },
-  f2f: { }
-}
+// const initialState = {
+//   title: 'hello',
+//   image: '',
+//   f2f: '',
+//   rank: ''
+// }
 
-export default (recipe = initialState, action) => {
+export default function remoteRecipes (state = null, action) {
+  // console.log(action)
   switch (action.type) {
     case RECEIVE_REMOTE_RECIPES:
-      return action.recipe
+      return action.recipes
 
     default:
-      return recipe
+      return state
   }
 }

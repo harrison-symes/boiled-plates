@@ -12,11 +12,13 @@ class RecipeList extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      searchIngredient: ''
+      searchIngredient: '',
+      searchResult: []
     }
     // this.getRemoteRecipe = this.getRemoteRecipe.bind(this),
     this.handleOnChange = this.handleOnChange.bind(this)
     this.addToSearch = this.addToSearch.bind(this)
+    this.handleAdd = this.handleAdd.bind(this)
   }
 
   componentDidMount () {
@@ -28,10 +30,16 @@ class RecipeList extends React.Component {
     this.props.dispatch(searchRecipes(this.state.searchIngredient, (recipes) => {
       const f2fresult = recipes
       console.log(f2fresult)
-      this.setState({ searchIngredient: f2fresult })
+      // this.setState({ searchIngredient: f2fresult })
     }))
+    this.handleAdd(this.state.searchIngredient)
   }
 
+  handleAdd (result) {
+    const {searchResult} = this.state
+    searchResult.push(result)
+    this.setState({searchResult, searchIngredient: ''})
+  }
   handleOnChange (e) {
     this.setState({
       searchIngredient: e.target.value
@@ -39,7 +47,8 @@ class RecipeList extends React.Component {
   }
 
   render () {
-    const {recipes} = this.props
+    const {title, image} = this.props.remoteRecipes
+    console.log(title)
     return (
       <div>
         <div className='recipe-banner'>
@@ -52,17 +61,16 @@ class RecipeList extends React.Component {
           <input type='submit' value='Search' />
         </form>
         <div className='flex-container'>
-          Search result flys in here
-          <RemoteRecipe/>
           <div className='recipe-tickets'>
-            Result one
+            {title}
+            {image}
           </div>
           <div className='recipe-tickets'>
             Result two
           </div>
         </div>
 
-        <h3>User's recipe</h3>
+        {/* <h3>User's recipe</h3>
         <div className='flex-container'>
           {recipes.map(recipe => {
             return (
@@ -71,15 +79,15 @@ class RecipeList extends React.Component {
               </div>
             )
           })}
-        </div>
+        </div> */}
       </div>
     )
   }
 }
 
-const mapStateToProps = ({recipes}) => {
+const mapStateToProps = ({remoteRecipes}) => {
   return {
-    recipes
+    remoteRecipes
   }
 }
 

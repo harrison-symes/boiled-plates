@@ -15,7 +15,7 @@ class RemoteRecipe extends React.Component {
         <div className='flex-container'>
 
           <div className='recipe-tickets'>
-            Checkout these delicious options: 
+            {/* Checkout these delicious options:  */}
 
           </div>
         </div>
