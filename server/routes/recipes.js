@@ -52,4 +52,16 @@ router.delete('/:id', (req, res) => {
     .catch(err => res.status(err).end)
 })
 
+// router.post('/', (req, res) => {
+//   var newName = req.body.name
+//   var newIngredients = req.body.ingredients
+//   var newInstructions = req.body.instructions
+
+//   var result = {newName, newIngredients, newInstructions}
+
+//   addRecipe(result, req.body)
+//     .then(result => res.json(result))
+//     .catch(err => res.status(err).end)
+// })
+
 module.exports = router
