@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import jump from 'jump.js'
 // import { Route } from 'react-router-dom'
 
-// import UserProgress from './UserProgress'
+import UserProgress from './UserProgress.jsx'
 
 class Profile extends React.Component {
   render () {
@@ -17,9 +17,7 @@ class Profile extends React.Component {
         </a>
 
         <div className='side-bar'>
-          <div id='d3-graph'>
-            <div id='pro-image'>props.profile.image</div>
-          </div>
+          <UserProgress />
           <div className='badgets'>Badgets goes here</div>
         </div>
         <div className='post-container'>
