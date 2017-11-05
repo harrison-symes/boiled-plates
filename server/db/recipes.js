@@ -44,6 +44,17 @@ const deleteRecipe = (id, testConn) => {
     .del()
 }
 
+const createRecipe = (recipe, testConn) => {
+  const db = testConn || defaultConn
+  const newRecipe = {
+    name: event.name,
+    ingredients: event.ingredients,
+    instructions: event.instructions
+  } 
+  return db('recipes')
+    .insert(newRecipe)
+}
+
 module.exports = {
   getRecipes,
   getRecipe,
