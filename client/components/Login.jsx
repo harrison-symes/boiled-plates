@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { loginUser } from '../actions/login'
+import { Redirect } from 'react-router'
+import Profile from './profile/Profile'
 
 class Login extends React.Component {
   constructor (props) {
@@ -8,6 +10,7 @@ class Login extends React.Component {
     this.state = {
       username: '',
       password: ''
+
     }
     this.updateDetails = this.updateDetails.bind(this)
     this.submit = this.submit.bind(this)
@@ -31,6 +34,7 @@ class Login extends React.Component {
         </label><br />
         <input type="submit" />
       </form>
+
     )
   }
 }
