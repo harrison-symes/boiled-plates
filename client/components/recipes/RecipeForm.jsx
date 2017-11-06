@@ -29,7 +29,6 @@ class RecipeForm extends React.Component {
     })
   }
 
-  //Unsure if this is set up right?
   handleSubmit(event) {
     const { name, image, ingredients, instructions } = this.state
     const newRecipe = { name, image, ingredients, instructions }
