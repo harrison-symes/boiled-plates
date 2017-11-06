@@ -7,7 +7,7 @@ const profilesDb = require('../db/profiles')
 router.get('/', decode, (req, res) => {
   profilesDb.getProfile(req.user.id)
     .then(profiles => {
-      console.log(profiles)
+      // console.log(profiles)
       res.json(profiles)
     })
 })
