@@ -12,6 +12,7 @@ function createUser (username, password, testDb) {
     })
   })
 }
+
 function userExists (username, testDb) {
   const db = testDb || connection
   return db('users')
