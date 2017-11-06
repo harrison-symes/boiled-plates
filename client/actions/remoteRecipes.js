@@ -30,17 +30,25 @@ export function searchRecipes (ingredient, callback) {
   return (dispatch) => {
     searchRecipeInfo(ingredient, (err, results) => {
       if (!err) {
-        const recipes = results.recipes.slice(0, 5)
+        const recipes = results.recipes.slice(0, 5).map(recipe => {
+          return {
+            title: recipe.title,
+            image: recipe.image_url,
+            f2f: recipe.f2f_url,
+            rank: recipe.social_rank
+          }
+        })
         // console.log('before', recipes)
-        const objBuilder = {
-          title: recipes[0].title,
-          image: recipes[0].image_url,
-          f2f: recipes[0].f2f_url,
-          rank: recipes[0].social_rank
-        }
+        
+
+        const objBuilder = 
+
+        // forEach(function callback( )) {
+
+        // }
         // console.log('after', objBuilder)
         callback(recipes)
-        dispatch(receiveRemoteRecipes(objBuilder))
+        dispatch(receiveRemoteRecipes(recipes))
       } else {
         console.log(err)
       }
