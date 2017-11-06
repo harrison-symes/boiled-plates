@@ -46,7 +46,7 @@ class RecipeList extends React.Component {
   }
 
   render () {
-    const {title, image, f2f} = this.props.remoteRecipes
+    const { remoteRecipes} = this.props
     const recipes = this.props.recipes
     // console.log(this.props.remoteRecipes)
     return (
@@ -61,14 +61,13 @@ class RecipeList extends React.Component {
           <input type='submit' value='Search' />
         </form>
         <div className='flex-container'>
-          <div className='recipe-tickets'>
-            <div className='user-recipe-title'>{title}</div>
-            <img src={image} width='100%'/>
-            <a href={f2f} >Checkout this recipe</a>
-          </div>
-          <div className='recipe-tickets'>
-            Result two
-          </div>
+          {remoteRecipes.map(({title, image, f2f}) => {
+            return <div className='recipe-tickets'>
+              <div className='user-recipe-title'>{title}</div>
+              <img src={image} width='100%'/>
+              <a href={f2f} >Checkout this recipe</a>
+            </div>
+          })}
         </div>
 
         <h3>User's recipe</h3>
