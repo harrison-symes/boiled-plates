@@ -44,6 +44,12 @@ class Profile extends React.Component {
   }
 }
 
+  const mapStateToProps = (state) => {
+    return {
+      
+    }
+  }
+
 export default connect()(Profile)
 
 { /* <Route exact path='/addrecipe' component={Addrecipe} /> */ }

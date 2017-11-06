@@ -2,6 +2,7 @@ import { FORM_UPDATE_VALUE } from '../actions/addRecipe'
 
 const initialState = {
   name: '',
+  image: '',
   ingredients: '',
   instructions: ''
 }
@@ -12,6 +13,9 @@ export default (state = initialState, action) => {
     case ADD_RECIPE:
     return assign('', state, {
       name: assign('', state.name, {
+        [action.name]: action.value
+      }),
+      image: assign('', state, {
         [action.name]: action.value
       }),
       ingredients: assign('', state, {
