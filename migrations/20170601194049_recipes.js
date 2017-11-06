@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     table.string('instructions')
     table.string('image')
     table.string('ingredients')
-    table.integer('profile_id')
+    table.integer('user_id')
   })
 }
 

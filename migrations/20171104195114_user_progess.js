@@ -4,7 +4,6 @@ exports.up = function(knex, Promise) {
     table.increments('id').primary()
     table.integer('user_id').references('users.id')
     table.integer('post_type_id').references('post_types.id')
-    table.integer('count')
   })
 };
 

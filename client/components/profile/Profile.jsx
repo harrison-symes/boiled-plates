@@ -27,11 +27,11 @@ class Profile extends React.Component {
             <button className='options'>Favourite List</button>
           </div>
 
-          <div className='posts'>
+          {/* <div className='posts'>
             <div className='post-title'>My Kai Today!</div>
             <img src='./images/placeholder.jpg' className='food-image' width='100%' />
             <div className='post-content'>My first vegetarian meal. </div>
-          </div>
+          </div> */}
 
           <div className='posts'>
             <div className='post-title'>Try my recipe</div>

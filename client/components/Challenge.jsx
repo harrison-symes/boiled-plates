@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 // import { connect } from 'react-redux'
 
 const Challenge = () => {
@@ -10,7 +10,7 @@ const Challenge = () => {
       </div>
 
       <div className='challenge-description'>
-        <p>Join the challenge</p>
+        <Link to='/register'><p>Join the challenge</p></Link>
       </div>
 
     </div>
