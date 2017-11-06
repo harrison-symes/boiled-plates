@@ -2,6 +2,8 @@ const express = require('express')
 const router = express.Router()
 const request = require('superagent')
 
+const {decode} = require('../auth/token')
+
 const {getRecipes, getRecipe, addRecipe, editRecipe, deleteRecipe, createRecipe} = require('../db/recipes')
 
 router.get('/', (req, res) => {
@@ -31,10 +33,12 @@ router.get('/search/:ingredient', (req, res) => {
     })
 })
 
-router.post('/add', (req, res) => {
+router.post('/', decode, (req, res) => {
   let {recipe} = req.body
+  recipe.profile_id = req.user.id
+  console.log({recipe})
   addRecipe(recipe)
-    .then(result => res.json(result))
+    .then(newRecipe => res.json(newRecipe))
     .catch(err => res.status(err).end)
 })
 
@@ -52,14 +56,14 @@ router.delete('/:id', (req, res) => {
     .catch(err => res.status(err).end)
 })
 
-router.post('/', (req, res) => {
-  createRecipe(req.body)
-    .then(() => {
-      res.status(201).end()
-    })
-    .catch(err => {
-      res.status(500).send(err.message)
-    })
-})
+// router.post('/', (req, res) => {
+//   createRecipe(req.body)
+//     .then(() => {
+//       res.status(201).end()
+//     })
+//     .catch(err => {
+//       res.status(500).send(err.message)
+//     })
+// })
 
 module.exports = router

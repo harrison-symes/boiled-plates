@@ -1,4 +1,4 @@
-import request from 'superagent'
+import request from '../utils/api'
 
 const ADD_RECIPE = 'ADD_RECIPE'
 const RECEIVE_NEW_RECIPE = 'RECEIVE_NEW_RECIPE'
@@ -9,34 +9,19 @@ export const addRecipe = () => {
   }
 }
 
-export const receiveNewRecipe = () => {
+export const receiveNewRecipe = (recipe) => {
   return {
-    type: "RECEIVE_NEW_RECIPE"
+    type: "RECEIVE_NEW_RECIPE",
+    recipe
   }
 }
 
-//first Async action I made didn't send back any errors
-export function addedRecipe() {
+export function addNewRecipe(recipe) {
   return (dispatch) => {
-    request
-      .get(`/api/form`)
-      .end((err, res) => {
-        if (err) {
-          console.error(err.message)
-          return
-        }
-        dispatch(addRecipe(res.body))
-      })
-  }
-}
-
-//second Async action, this one returns a 404 (Not found after execution)
-export function addNewRecipe(event) {
-  return (dispatch) => {
-    dispatch(addRecipe())
-    request('post', '/api/form', event)
+    console.log({recipe})
+    request('post', 'recipes', {recipe})
       .then(res => {
-        dispatch(receiveNewRecipe())
+        dispatch(receiveNewRecipe(res.body))
       })
       
   }

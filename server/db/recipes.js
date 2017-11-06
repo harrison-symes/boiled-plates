@@ -10,6 +10,7 @@ const getRecipe = (id, testConn) => {
   const db = testConn || defaultConn
   return db('recipes')
     .where('id', id)
+    .first()
 }
 
 const addRecipe = (r, testConn) => {
@@ -17,11 +18,12 @@ const addRecipe = (r, testConn) => {
   return db('recipes')
     .insert({
       name: r.name,
-      instructions: r.instructions,
       image: r.image,
+      instructions: r.instructions,
       ingredients: r.ingredients,
       profile_id: r.profile_id
     })
+    .then(id => getRecipe(id[0]))
 }
 
 const editRecipe = (id, r, testConn) => {

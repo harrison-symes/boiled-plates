@@ -8,14 +8,13 @@ class RecipeForm extends React.Component {
     super(props)
     this.state = {
       name: '',
-      pictures: [],
+      image: '',
       ingredients: '',
       instructions: ''
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit =this.handleSubmit.bind(this)
-    this.onDrop = this.onDrop.bind(this)
   }
 
   // Legit cannot remember why this is commented out anymore, but it sends back errors.
@@ -30,19 +29,14 @@ class RecipeForm extends React.Component {
     })
   }
 
-  onDrop(picture) {
-    this.setState({
-      pictures: this.state.pictures.concat(picture)
-    })
-  }
   //Unsure if this is set up right?
   handleSubmit(event) {
-    const { name, ingredients, instructions } = this.state
-    const newRecipe = { name, ingredients, instructions }
+    const { name, image, ingredients, instructions } = this.state
+    const newRecipe = { name, image, ingredients, instructions }
     this.props.dispatch(addNewRecipe(newRecipe))
     alert('Your recipie has been submitted')
     event.preventDefault()
-    console.log({name: this.state.name, ingredients: this.state.ingredients, instructions: this.state.instructions})
+    console.log({name: this.state.name, image:this.state.image, ingredients: this.state.ingredients, instructions: this.state.instructions})
   }
 
   render() {
@@ -53,6 +47,10 @@ class RecipeForm extends React.Component {
             <label>
               Name:
               <input type='text' name='name' placeholder='Recipe name' onChange={this.handleChange} />
+            </label>
+            <label>
+              Image:
+              <input type='text' name='image' placeholder='insert an image URL :)' onChange={this.handleChange} />
             </label>
             <label>
               Ingredients:
