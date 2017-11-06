@@ -1,19 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Recipe from './Recipe'
+import SingleRecipe from './SingleRecipe'
 
-function UserRecipeContainer(props) {
+function OneRecipeView(props) {
   const recipes = props.recipes
   return (
     <div className='recipe'>
       {recipes.map(recipe => {
         return (
-          <Recipe recipe={recipe} />
+          <SingleRecipe recipe={recipe} />
         )
       })}
     </div>
   )
 }
 
-export default connect()(UserRecipeContainer)
+export default connect()(OneRecipeView)

@@ -32,9 +32,13 @@ class RecipeForm extends React.Component {
   handleSubmit (event) {
     const { name, image, ingredients, instructions } = this.state
     const newRecipe = { name, image, ingredients, instructions }
+
     this.props.dispatch(addNewRecipe(newRecipe))
+
     alert('Your recipie has been submitted')
+
     event.preventDefault()
+    
     console.log({name: this.state.name, image: this.state.image, ingredients: this.state.ingredients, instructions: this.state.instructions})
   }
 
