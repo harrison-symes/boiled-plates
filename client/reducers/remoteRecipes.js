@@ -7,7 +7,7 @@ const initialState = {
   rank: ''
 }
 
-export default function remoteRecipes (state = initialState, action) {
+export default function remoteRecipes (state = [], action) {
   // console.log(action)
   switch (action.type) {
     case RECEIVE_REMOTE_RECIPES:
