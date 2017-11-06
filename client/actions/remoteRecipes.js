@@ -1,11 +1,11 @@
 import { searchRecipeInfo } from '../client-api'
 
-const RECEIVE_REMOTE_RECIPES = 'RECEIVE_REMOTE_RECIPES'
+export const RECEIVE_REMOTE_RECIPES = 'RECEIVE_REMOTE_RECIPES'
 
 export const receiveRemoteRecipes = (recipes) => {
-  console.log('this is', recipes)
+  // console.log('this is', recipes)
   return {
-    type: 'RECEIVE_REMOTE_RECIPES',
+    type: RECEIVE_REMOTE_RECIPES,
     recipes
   }
 }
@@ -19,10 +19,6 @@ export const receiveRemoteRecipes = (recipes) => {
 //   }
 // }
 
-// const recipes = results.recipes.map(recipe => {
-//   return objBuilder(recipe)
-// })
-
 // const yourRecipe = ({ recipes }) => {
 //   // console.log({ recipes })
 //   return {
@@ -34,17 +30,15 @@ export function searchRecipes (ingredient, callback) {
   return (dispatch) => {
     searchRecipeInfo(ingredient, (err, results) => {
       if (!err) {
-        const recipes = results.recipes[0]
+        const recipes = results.recipes.slice(0, 5)
         // console.log('before', recipes)
         const objBuilder = {
-          title: recipes.title,
-          image: recipes.image_url,
-          f2f: recipes.f2f_url,
-          rank: recipes.social_rank
+          title: recipes[0].title,
+          image: recipes[0].image_url,
+          f2f: recipes[0].f2f_url,
+          rank: recipes[0].social_rank
         }
-        // console.log('after', recipes)
-        // console.log('this is', objBuilder)
-
+        // console.log('after', objBuilder)
         callback(recipes)
         dispatch(receiveRemoteRecipes(objBuilder))
       } else {

@@ -10,45 +10,35 @@ exports.seed = function (knex, Promise) {
           firstname: 'Aaron',
           lastname: 'Macdonald',
           image: '',
-          email: 'aaron@gmail.com',
-          user_progress: 0,
-          user_posts: [{ Added_Recipe: '' }, { Host_A_Kai: '' }, { Share_Post: '' }, { Fav_List: '' }]
+          email: 'aaron@gmail.com'
         },
         { id: 2,
           user_id: 2,
           firstname: 'Daz',
           lastname: 'Yang',
           image: '',
-          email: 'daz@gmail.com',
-          user_progress: 0,
-          user_posts: [{ Added_Recipe: '' }, { Host_A_Kai: '' }, { Share_Post: '' }, { Fav_List: '' }]
+          email: 'daz@gmail.com'
         },
         { id: 3,
           user_id: 3,
           firstname: 'Skye',
           lastname: 'Simpson',
           image: '',
-          email: 'skye@gmail.com',
-          user_progress: 0,
-          user_posts: [ {Added_Recipe: ''}, {Host_A_Kai: ''}, {Share_Post: ''}, {Fav_List: ''} ]
+          email: 'skye@gmail.com'
         },
         { id: 4,
           user_id: 4,
           firstname: 'Rajal',
           lastname: 'Kumar',
           image: '',
-          email: 'raj@gmail.com',
-          user_progress: 0,
-          user_posts: [{ Added_Recipe: '' }, { Host_A_Kai: '' }, { Share_Post: '' }, { Fav_List: '' }]
+          email: 'raj@gmail.com'
         },
         { id: 5,
           user_id: 5,
           firstname: 'Gordon',
           lastname: 'Ramsay',
           image: './images/profile_images/GordonRamsay.jpg',
-          email: 'ramsay@gmail.com',
-          user_progress: 0,
-          user_posts: [{ Added_Recipe: '' }, { Host_A_Kai: '' }, { Share_Post: '' }, { Fav_List: '' }]
+          email: 'ramsay@gmail.com'
         }
       ])
     })

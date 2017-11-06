@@ -15,7 +15,6 @@ class RecipeList extends React.Component {
       searchIngredient: '',
       searchResult: []
     }
-    // this.getRemoteRecipe = this.getRemoteRecipe.bind(this),
     this.handleOnChange = this.handleOnChange.bind(this)
     this.addToSearch = this.addToSearch.bind(this)
     this.handleAdd = this.handleAdd.bind(this)
@@ -29,8 +28,8 @@ class RecipeList extends React.Component {
     e.preventDefault()
     this.props.dispatch(searchRecipes(this.state.searchIngredient, (recipes) => {
       const f2fresult = recipes
-      console.log(f2fresult)
-      // this.setState({ searchIngredient: f2fresult })
+      // console.log(f2fresult)
+      this.setState({ searchIngredient: '' })
     }))
     this.handleAdd(this.state.searchIngredient)
   }
@@ -47,8 +46,9 @@ class RecipeList extends React.Component {
   }
 
   render () {
-    const {title, image} = this.props.remoteRecipes
-    console.log(title)
+    const {title, image, f2f} = this.props.remoteRecipes
+    const recipes = this.props.recipes
+    // console.log(this.props.remoteRecipes)
     return (
       <div>
         <div className='recipe-banner'>
@@ -57,20 +57,21 @@ class RecipeList extends React.Component {
 
         <h3>Find a recipe</h3>
         <form onSubmit={this.addToSearch}>
-          <input type='text' className='input-bar' placeholder="Search a recipe" value={this.state.searchIngredient} onChange={(e) => this.handleOnChange(e)}/>
+          <input type='text' className='input-bar' placeholder="Search a recipe" value={this.state.searchIngredient} onChange={ this.handleOnChange}/>
           <input type='submit' value='Search' />
         </form>
         <div className='flex-container'>
           <div className='recipe-tickets'>
-            {title}
-            {image}
+            <div className='user-recipe-title'>{title}</div>
+            <img src={image} width='100%'/>
+            <a href={f2f} >Checkout this recipe</a>
           </div>
           <div className='recipe-tickets'>
             Result two
           </div>
         </div>
 
-        {/* <h3>User's recipe</h3>
+        <h3>User's recipe</h3>
         <div className='flex-container'>
           {recipes.map(recipe => {
             return (
@@ -79,15 +80,16 @@ class RecipeList extends React.Component {
               </div>
             )
           })}
-        </div> */}
+        </div>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({remoteRecipes}) => {
+const mapStateToProps = (state) => {
   return {
-    remoteRecipes
+    remoteRecipes: state.remoteRecipes,
+    recipes: state.recipes
   }
 }
 
