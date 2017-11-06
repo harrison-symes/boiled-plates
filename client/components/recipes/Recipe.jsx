@@ -10,7 +10,7 @@ const Recipe = (props) => {
   return (
     <div className=' '>
       <div className='user-recipe-title'>{props.recipe.name}</div>
-      <img src={props.recipe.image} alt='' width='100%'/>
+      <img src={props.recipe.image} alt='recipe-image' width='100%'/>
       <Link to={`/recipes/${props.recipe.id}`}>
         <div className='check-it-out'>Checkout "username's" recipe</div>
       </Link>

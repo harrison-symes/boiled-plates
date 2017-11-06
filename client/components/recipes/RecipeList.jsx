@@ -5,29 +5,50 @@ import {connect} from 'react-redux'
 import {getRecipes} from '../../actions/recipes'
 import Recipe from './Recipe'
 import {searchRecipes} from '../../actions/remoteRecipes'
+import {searchRecipeInfo} from '../../client-api/'
+import RemoteRecipe from './RemoteRecipe'
 
 class RecipeList extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      searchIngredient: ''
+      searchIngredient: '',
+      searchResult: []
     }
-    this.getRemoteRecipe = this.getRemoteRecipe.bind(this)
+    this.handleOnChange = this.handleOnChange.bind(this)
+    this.addToSearch = this.addToSearch.bind(this)
+    this.handleAdd = this.handleAdd.bind(this)
   }
 
   componentDidMount () {
     this.props.dispatch(getRecipes())
   }
 
-  getRemoteRecipe (e) {
+  addToSearch (e) {
+    e.preventDefault()
+    this.props.dispatch(searchRecipes(this.state.searchIngredient, (recipes) => {
+      const f2fresult = recipes
+      // console.log(f2fresult)
+      this.setState({ searchIngredient: '' })
+    }))
+    this.handleAdd(this.state.searchIngredient)
+  }
+
+  handleAdd (result) {
+    const {searchResult} = this.state
+    searchResult.push(result)
+    this.setState({searchResult, searchIngredient: ''})
+  }
+  handleOnChange (e) {
     this.setState({
       searchIngredient: e.target.value
     })
-    this.props.dispatch(searchRecipes(e.target.value))
   }
 
   render () {
-    const {recipes} = this.props
+    const {title, image, f2f} = this.props.remoteRecipes
+    const recipes = this.props.recipes
+    // console.log(this.props.remoteRecipes)
     return (
       <div>
         <div className='recipe-banner'>
@@ -35,13 +56,15 @@ class RecipeList extends React.Component {
         </div>
 
         <h3>Find a recipe</h3>
-        <form>
-          <input type='text' className='input-bar' onChange = {(e) => this.getRemoteRecipe(e)} value = {this.state.searchIngredient} placeholder="Search a recipe" className="search-bar"/>
+        <form onSubmit={this.addToSearch}>
+          <input type='text' className='input-bar' placeholder="Search a recipe" value={this.state.searchIngredient} onChange={ this.handleOnChange}/>
+          <input type='submit' value='Search' />
         </form>
         <div className='flex-container'>
-          Search result flys in here
           <div className='recipe-tickets'>
-            Result one
+            <div className='user-recipe-title'>{title}</div>
+            <img src={image} width='100%'/>
+            <a href={f2f} >Checkout this recipe</a>
           </div>
           <div className='recipe-tickets'>
             Result two
@@ -63,9 +86,10 @@ class RecipeList extends React.Component {
   }
 }
 
-const mapStateToProps = ({recipes}) => {
+const mapStateToProps = (state) => {
   return {
-    recipes
+    remoteRecipes: state.remoteRecipes,
+    recipes: state.recipes
   }
 }
 
