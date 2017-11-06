@@ -5,7 +5,7 @@ import jump from 'jump.js'
 
 import { getRecipes} from '../../actions/recipes'
 import UserProgress from './UserProgress.jsx'
-import UserRecipeContainer from '.././recipes/UserRecipeContainer'
+import UserRecipeContainer from '../recipes/UserRecipeContainer'
 
 class Profile extends React.Component {
   componentDidMount() {
