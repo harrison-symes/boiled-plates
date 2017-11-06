@@ -10,22 +10,6 @@ const auth = require('./routes/auth')
 
 const server = express()
 
-server.use('api/v1/search/:ingredient', (req, res) => {
-  const ingredient = req.params.ingredient
-  // console.log(ingredient)
-  request
-    .get(`http://food2fork.com/api/search?key=04a1bbc8b9e4709129e5f7455aa51d17&q=${ingredient}`)
-    .set('Accept', 'application/json')
-    .end((err, res) => {
-      if (err) {
-        callback(err)
-        // console.log(err)
-      } else {
-        res.json(res.body)
-      }
-    })
-})
-
 // http://food2fork.com/api/get?key=04a1bbc8b9e4709129e5f7455aa51d17&rId=35120
 
 server.use(cors('*'))
