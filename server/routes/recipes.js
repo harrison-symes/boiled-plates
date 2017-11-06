@@ -35,25 +35,25 @@ router.get('/search/:ingredient', (req, res) => {
 
 router.post('/', decode, (req, res) => {
   let {recipe} = req.body
-  recipe.profile_id = req.user.id
-  console.log({recipe})
+  recipe.user_id = req.user.id
+  // console.log({recipe})
   addRecipe(recipe)
     .then(newRecipe => res.json(newRecipe))
-    .catch(err => res.status(err).end)
+    .catch(err => res.status(500).end())
 })
 
 router.put('/:id', (req, res) => {
   let {id} = req.params
   editRecipe(id, req.body)
     .then(result => res.json(result))
-    .catch(err => res.status(err).end)
+    .catch(err => res.status(500).end())
 })
 
 router.delete('/:id', (req, res) => {
   let {id} = req.params
   deleteRecipe(id)
     .then(result => res.json(result))
-    .catch(err => res.status(err).end)
+    .catch(err => res.status(500).end())
 })
 
 // router.post('/', (req, res) => {

@@ -15,15 +15,28 @@ const getRecipe = (id, testConn) => {
 
 const addRecipe = (r, testConn) => {
   const db = testConn || defaultConn
-  return db('recipes')
+  // first promise
+  const insertIntoRecipes = db('recipes')
     .insert({
       name: r.name,
       image: r.image,
       instructions: r.instructions,
       ingredients: r.ingredients,
-      profile_id: r.profile_id
+      user_id: r.user_id
     })
     .then(id => getRecipe(id[0]))
+    // second promise
+  const insertIntoUserProgress = db('user_progress')
+    .insert({
+      user_id: r.user_id,
+      post_type_id: 2
+    })
+    // combining them here
+  return Promise.all([insertIntoRecipes, insertIntoUserProgress])
+    .then((result) => {
+      console.log(result)
+      return result[0]
+    })
 }
 
 const editRecipe = (id, r, testConn) => {
@@ -52,7 +65,7 @@ const createRecipe = (recipe, testConn) => {
     name: event.name,
     ingredients: event.ingredients,
     instructions: event.instructions
-  } 
+  }
   return db('recipes')
     .insert(newRecipe)
 }
