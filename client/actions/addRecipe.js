@@ -11,18 +11,17 @@ export const addRecipe = () => {
 
 export const receiveNewRecipe = (recipe) => {
   return {
-    type: "RECEIVE_NEW_RECIPE",
+    type: 'RECEIVE_NEW_RECIPE',
     recipe
   }
 }
 
-export function addNewRecipe(recipe) {
+export function addNewRecipe (recipe) {
   return (dispatch) => {
     console.log({recipe})
     request('post', 'recipes', {recipe})
       .then(res => {
         dispatch(receiveNewRecipe(res.body))
       })
-      
   }
 }

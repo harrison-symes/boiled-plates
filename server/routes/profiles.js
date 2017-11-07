@@ -5,6 +5,7 @@ const { decode } = require('../auth/token')
 const profilesDb = require('../db/profiles')
 
 router.get('/', decode, (req, res) => {
+  console.log(req.user)
   profilesDb.getProfile(req.user.id)
     .then(profiles => {
       // console.log(profiles)

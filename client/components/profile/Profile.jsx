@@ -21,7 +21,7 @@ class Profile extends React.Component {
     return (
       <div className='profile'>
 
-        <a className="top-button" href="#/profile" onClick={() => jump('.post-title')}>
+        <a className="top-button" href="#/profile" onClick={() => jump('.options')}>
           <img className="top-button-icon" src="images/down.png"height='30px'width='30px' />
           <span className="top-button-text"></span>
         </a>
@@ -69,7 +69,7 @@ Profile.defaultProps = {
 
 const mapStateToProps = ({auth, recipes, profile}) => {
   return {
-    recipes: recipes.filter(recipe => recipe.user_id === auth.user.id),
+    recipes: recipes.filter(recipe => recipe.user_id === auth.user ? auth.user.id : 0),
     profile
   }
 }
