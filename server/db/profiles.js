@@ -12,25 +12,38 @@ const getProfile = (id, testConn) => {
       'recipes.user_id': id,
       'user_progress.user_id': id
     })
-    .then(formatProfile)
+    .then((objects) => formatProfile(objects, id))
+    .catch(err => console.log(err))
 }
 
-function formatProfile (objects) {
+function formatProfile (objects, id) {
   // loop through the object and print out users info
-  const {firstname, lastname, email} = objects[0]
-  const profile = {firstname, lastname, email, recipes: []}
-  objects.forEach(object => {
-    const existing = profile.recipes.find((recipe) => {
-      return recipe && recipe.recipeId === object.recipeId
+  if (objects.length == 0) {
+    return defaultConn('users')
+      .where('users.id', id)
+      .join('profiles', 'users.id', 'profiles.user_id')
+      .first()
+      .then(profile => {
+        profile.recipes = []
+        return profile
+      })
+  }
+  else {
+    const {firstname, lastname, email} = objects[0]
+    const profile = {firstname, lastname, email, recipes: []}
+    objects.forEach(object => {
+      const existing = profile.recipes.find((recipe) => {
+        return recipe && recipe.recipeId === object.recipeId
+      })
+      if (!existing) {
+        const {name, instructions, ingredients, image, recipeId} = object
+  
+        profile.recipes.push({name, instructions, ingredients, image, recipeId})
+      }
     })
-    if (!existing) {
-      const {name, instructions, ingredients, image, recipeId} = object
-
-      profile.recipes.push({name, instructions, ingredients, image, recipeId})
-    }
-  })
-
-  return profile
+  
+    return profile
+  }
 }
 
 module.exports = {

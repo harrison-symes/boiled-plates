@@ -17,7 +17,7 @@ class Profile extends React.Component {
   render () {
     const profile = this.props.profile
     const {firstname, lastname} = profile
-
+    console.log(profile)
     return (
       <div className='profile'>
 
@@ -66,7 +66,7 @@ Profile.defaultProps = {
 
 const mapStateToProps = ({auth, recipes, profile}) => {
   return {
-    recipes: recipes.filter(recipe => recipe.user_id === auth.user.id),
+    recipes: recipes.filter(recipe => recipe.user_id === auth.user ? auth.user.id : 0),
     profile
   }
 }
