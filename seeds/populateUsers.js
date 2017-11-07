@@ -1,6 +1,6 @@
 var bcrypt = require('bcrypt')
 
-const userNames = ['aaron', 'daz', 'skye', 'rajal', 'ramsey']
+const userNames = ['aaron', 'daz', 'skye', 'rajal', 'ramsey', 'child', 'lawson']
 
 // This is not your typical seed file because we need to create
 // the hashes for each user's password and creating them is an
