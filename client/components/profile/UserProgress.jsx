@@ -18,7 +18,7 @@ class UserProgress extends React.Component {
 
     return (
       <section>
-       <CountProgress {...progressBar} />
+        <CountProgress {...progressBar} />
       </section>
     )
   }

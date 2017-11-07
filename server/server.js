@@ -7,6 +7,7 @@ const cors = require('cors')
 const recipes = require('./routes/recipes')
 const profiles = require('./routes/profiles')
 const auth = require('./routes/auth')
+const comments = require('./routes/comments')
 
 const server = express()
 
@@ -22,6 +23,8 @@ server.use('/api/auth', auth)
 server.use('/api/recipes', recipes)
 
 server.use('/api/profiles', profiles)
+
+server.use('/api/comments', comments)
 
 server.use('/api/v1/getfood2fork/:id', (req, res) => {
   const id = Number(req.params.id)
