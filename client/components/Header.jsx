@@ -27,7 +27,7 @@ class Header extends React.Component {
           <div className='Nav'>
             {this.props.auth.isAuthenticated
               ? <div>
-                <Link to={`/profile`}><p>Hi, {auth.user.username}</p></Link>
+                <p>Hi, {auth.user.username}</p><Link to={`/profile`}>Profile</Link>
                 <button onClick={() => dispatch(logoutUser())}>Logout</button>
               </div>
               : <div>

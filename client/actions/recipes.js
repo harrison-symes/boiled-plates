@@ -12,7 +12,7 @@ export const receiveRecipes = (recipes) => {
 export function getRecipes () {
   return (dispatch) => {
     request
-      .get(`/api/recipes`)
+      .get('/api/recipes')
       .end((err, res) => {
         if (err) {
           console.error(err.message)

@@ -16,7 +16,7 @@ exports.seed = function (knex, Promise) {
           user_id: 2,
           firstname: 'Daz',
           lastname: 'Yang',
-          image: '',
+          image: './images/profile_images/GordonRamsay.jpg',
           email: 'daz@gmail.com'
         },
         { id: 3,

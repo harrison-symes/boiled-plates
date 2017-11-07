@@ -1,18 +1,23 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import jump from 'jump.js'
 
-import { getRecipes} from '../../actions/recipes'
+import {getRecipes} from '../../actions/recipes'
+import {getProfile} from '../../actions/profile'
 import UserProgress from './UserProgress.jsx'
 import UserRecipeContainer from '../recipes/UserRecipeContainer'
 
 class Profile extends React.Component {
-  componentDidMount() {
+  componentDidMount () {
     this.props.dispatch(getRecipes())
+    this.props.dispatch(getProfile())
+    // dispatch request
   }
   render () {
-    console.log(this.props.recipes)
+    const profile = this.props.profile
+    const {firstname, lastname, postValue, profile_image} = profile
+    // console.log(postTypeId)
     return (
       <div className='profile'>
 
@@ -22,8 +27,8 @@ class Profile extends React.Component {
         </a>
 
         <div className='side-bar'>
-          <UserProgress />
-          <div className='badgets'>Badgets goes here</div>
+          <UserProgress score={postValue} image={profile_image} />
+          <div className='badgets'>{firstname} {lastname}</div>
         </div>
         <div className='post-container'>
           <div className='what-to-do'>
@@ -38,11 +43,11 @@ class Profile extends React.Component {
             </div>
             <img src='./images/placeholder.jpg' className='food-image' width='100%' />
             <div className='post-content'>Hey Kai pals, I just came up this recipe that I'd like to share with you. Let me know what you think!</div> */}
-           
+
             <div className='recipe-container'>
               <UserRecipeContainer recipes={this.props.recipes}/>
             </div>
-         
+
           </div>
         </div>
       </div>
@@ -50,18 +55,29 @@ class Profile extends React.Component {
   }
 }
 
-const mapStateToProps = ({auth, recipes}) => {
-  console.log({auth, recipes})
+Profile.defaultProps = {
+  profile: {
+    firstname: '',
+    lastname: '',
+    email: '',
+    postTypeId: '',
+    profile_image: '',
+    postValue: '',
+    recipes: []
+  }
+}
+
+const mapStateToProps = ({auth, recipes, profile}) => {
   return {
-    recipes: recipes.filter(recipe => recipe.user_id == auth.user.id)
+    recipes: recipes.filter(recipe => recipe.user_id === auth.user.id),
+    profile
   }
 }
 
 export default connect(mapStateToProps)(Profile)
 
-
-{/* <div className='posts'>
+{ /* <div className='posts'>
   <div className='post-title'>My Kai Today!</div>
   <img src='./images/placeholder.jpg' className='food-image' width='100%' />
   <div className='post-content'>My first vegetarian meal. </div>
-</div> */}
+</div> */ }
