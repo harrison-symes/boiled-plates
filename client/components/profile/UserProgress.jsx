@@ -2,14 +2,22 @@ import React from 'react'
 import * as d3 from 'd3'
 
 import CountProgress from './CountProgress'
+import { connect } from 'react-redux'
 
 class UserProgress extends React.Component {
+  componentWillReceiveProps (props) {
+    this.props.score
+  }
+  
   render () {
+    
+    const scoreNumber = Number(this.props.score)
+    // console.log(scoreNumber)
     const progressBar = {
-      tau: 3 * Math.PI,
+      tau: 2 * Math.PI,
       radius: 150,
       padding: -1,
-      amount: 15, // Adjust me
+      amount: scoreNumber, // Adjust me
       total: 100 // Adjust me
     }
 
@@ -18,10 +26,14 @@ class UserProgress extends React.Component {
 
     return (
       <section>
-       <CountProgress {...progressBar} />
+        <CountProgress {...progressBar} />
       </section>
     )
   }
 }
 
-export default UserProgress
+UserProgress.defaultProps = {
+  score: ''
+}
+
+export default connect()(UserProgress)

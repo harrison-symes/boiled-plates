@@ -16,8 +16,8 @@ class Profile extends React.Component {
   }
   render () {
     const profile = this.props.profile
-    const {firstname, lastname} = profile
-
+    const {firstname, lastname, postTypeId} = profile
+    // console.log(postTypeId)
     return (
       <div className='profile'>
 
@@ -27,8 +27,8 @@ class Profile extends React.Component {
         </a>
 
         <div className='side-bar'>
-          <UserProgress />
-          <div className='badgets'>{firstname}, {lastname} </div>
+          <UserProgress score={postTypeId}/>
+          <div className='badgets'>{firstname} {lastname}</div>
         </div>
         <div className='post-container'>
           <div className='what-to-do'>
@@ -60,6 +60,7 @@ Profile.defaultProps = {
     firstname: '',
     lastname: '',
     email: '',
+    postTypeId: '',
     recipes: []
   }
 }

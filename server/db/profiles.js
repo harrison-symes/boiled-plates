@@ -17,8 +17,8 @@ const getProfile = (id, testConn) => {
 
 function formatProfile (objects) {
   // loop through the object and print out users info
-  const {firstname, lastname, email} = objects[0]
-  const profile = {firstname, lastname, email, recipes: []}
+  const {firstname, lastname, email, postTypeId} = objects[0]
+  const profile = {firstname, lastname, email, postTypeId, recipes: []}
   objects.forEach(object => {
     const existing = profile.recipes.find((recipe) => {
       return recipe && recipe.recipeId === object.recipeId
