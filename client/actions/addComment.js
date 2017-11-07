@@ -16,10 +16,10 @@ export const receiveNewComment = (comment) => {
   }
 }
 
-export function addNewComment (comment) {
+export function addNewComment (comment, recipeID) {
   return (dispatch) => {
     console.log({comment})
-    request('post', 'comments', {comment})
+    request('post', 'comments/' + recipeID, {comment})
       .then(res => {
         dispatch(receiveNewComment(res.body))
       })

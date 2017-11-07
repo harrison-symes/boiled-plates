@@ -3,17 +3,30 @@ import { connect } from 'react-redux'
 
 import SingleComment from './SingleComment'
 
-function CommentContainer (props) {
+const CommentContainer = (props) => {
+  console.log(props)
   const comments = props.comments
   return (
     <div className='comment'>
       {comments.map(comment => {
+        console.log(comment)
         return (
-          <SingleComment comment={comment} />
+          <div className=''>
+            <p>{comment.comments}</p>
+          </div>
         )
       })}
     </div>
   )
 }
 
-export default connect()(CommentContainer)
+const mapStateToProps = ({auth, comments}) => {
+  console.log({auth, comments})
+  return {
+    comments: comments.filter(comment => comment.user_id == auth.user.id)
+  }
+}
+
+export default connect(mapStateToProps)(CommentContainer)
+
+{ /* <SingleComment comment={comment} /> */ }

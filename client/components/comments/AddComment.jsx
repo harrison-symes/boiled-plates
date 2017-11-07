@@ -9,16 +9,9 @@ class AddComment extends React.Component {
     this.state = {
       comment: ''
     }
-
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
-
-  // Legit cannot remember why this is commented out anymore, but it sends back errors.
-  // onChange(event) {
-  //   const state = this.state
-  //   state[event.target.]
-  // }
 
   handleChange (event) {
     this.setState({
@@ -27,16 +20,13 @@ class AddComment extends React.Component {
   }
 
   handleSubmit (event) {
+    event.preventDefault()
     const { comment } = this.state
     const newComment = { comment }
-
-    this.props.dispatch(addNewComment(newComment))
+    this.props.dispatch(addNewComment(newComment, this.props.recipeId))
 
     alert('Your comment has been submitted')
 
-    event.preventDefault()
-    
-    console.log({comment: this.state.comment})
   }
 
   render () {
@@ -45,7 +35,7 @@ class AddComment extends React.Component {
         <form className='form' onSubmit={this.handleSubmit}>
           <label>
               Comments:
-            <input type='text' name='Add Comment' placeholder='Comment' onChange={this.handleChange} />
+            <input type='text' name='comment' placeholder='Comment' onChange={this.handleChange} />
           </label>
           <button type='submit'>submit</button>
         </form>

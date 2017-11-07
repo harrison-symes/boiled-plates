@@ -4,12 +4,12 @@ import { connect } from 'react-redux'
 
 function SingleComment (props) {
   const comment = props.comment
+  const user = props.userId
 
   return (
     <div className=''>
-      <img src={comment.image} alt=''></img>
-      <hr />
       <p>{comment}</p>
+      <p>{user}</p>
     </div>
   )
 }

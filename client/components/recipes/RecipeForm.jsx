@@ -12,16 +12,9 @@ class RecipeForm extends React.Component {
       ingredients: '',
       instructions: ''
     }
-
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
-
-  // Legit cannot remember why this is commented out anymore, but it sends back errors.
-  // onChange(event) {
-  //   const state = this.state
-  //   state[event.target.]
-  // }
 
   handleChange (event) {
     this.setState({
