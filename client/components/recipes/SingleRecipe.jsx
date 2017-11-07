@@ -10,6 +10,7 @@ class SingleRecipe extends React.Component {
   componentDidMount () {
     this.props.dispatch(addNewComment())
   }
+
   // console.log(this.state.props)
   render () {
     const { recipe } = this.props
