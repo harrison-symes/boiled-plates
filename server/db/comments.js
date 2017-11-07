@@ -13,6 +13,14 @@ const getComment = (id, testConn) => {
     .first()
 }
 
+const getCommentsByRecipe = (recipeId, testConn) => {
+  const db = testConn || defaultConn
+  return db('comments')
+    .where('recipe_id', recipeId)
+    .join('users', 'comments.user_id', 'users.id')
+    .select('users.username', 'comments.*')
+}
+
 const addComment = (r, testConn) => {
   const db = testConn || defaultConn
   // first promise
@@ -36,7 +44,8 @@ const addComment = (r, testConn) => {
 module.exports = {
   getComments,
   getComment,
-  addComment
+  addComment,
+  getCommentsByRecipe
 }
 
 // .join('recipes', 'comments.recipe_id', 'recipes.recipe.id')

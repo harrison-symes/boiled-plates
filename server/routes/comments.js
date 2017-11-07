@@ -4,7 +4,7 @@ const router = express.Router()
 const { decode } = require('../auth/token')
 const commentsDb = require('../db/comments')
 
-const {getComment, addComment} = require('../db/comments')
+const {getComment, addComment, getCommentsByRecipe} = require('../db/comments')
 
 router.get('/', decode, (req, res) => {
   getComment(req.user.id)
@@ -12,6 +12,12 @@ router.get('/', decode, (req, res) => {
       console.log(comments)
       res.json(comments)
     })
+
+})
+
+router.get('/:recipeId', (req, res) => {
+  getCommentsByRecipe(req.params.recipeId)
+    .then(comments => res.json(comments))
 })
 
 router.get('/', (req, res) => {

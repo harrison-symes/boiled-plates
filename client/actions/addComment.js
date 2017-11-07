@@ -25,3 +25,19 @@ export function addNewComment (comment, recipeID) {
       })
   }
 }
+
+export function receiveComments (comments) {
+  return {
+    type: 'RECEIVE_COMMENTS',
+    comments
+  }
+}
+
+export function getRecipeComments (recipeId) {
+  return dispatch => {
+    request('get', "comments/" + recipeId)
+      .then(res => {
+        dispatch(receiveComments(res.body))
+      })
+  }
+}

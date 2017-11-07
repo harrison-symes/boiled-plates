@@ -2,13 +2,15 @@ import React from 'react'
 import { Switch, Route, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import addNewComment from '../../actions/addComment'
+import {getRecipeComments} from '../../actions/addComment'
+import {getRecipes} from '../../actions/recipes'
 import AddComment from '../comments/AddComment'
 import CommmentContainer from '../comments/CommentContainer'
 
 class SingleRecipe extends React.Component {
   componentDidMount () {
-    this.props.dispatch(addNewComment())
+    this.props.dispatch(getRecipes())
+    this.props.dispatch(getRecipeComments(this.props.recipe.id))
   }
 
   // console.log(this.state.props)
@@ -27,10 +29,20 @@ class SingleRecipe extends React.Component {
           <AddComment recipeId={recipe.id}/>
         </div>
         <div className='comment-container'>
-          <CommmentContainer />
+          <CommmentContainer recipeId={recipe.id} />
         </div>
       </div>
     )
+  }
+}
+
+SingleRecipe.defaultProps = {
+  recipe: {
+    image: '',
+    name: '',
+    instructions: '',
+    id: 1,
+    ingredients: ''
   }
 }
 
