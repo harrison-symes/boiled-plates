@@ -5,13 +5,18 @@ import CountProgress from './CountProgress'
 import { connect } from 'react-redux'
 
 class UserProgress extends React.Component {
-  componentWillReceiveProps (props) {
-    this.props.score
-  }
-  
+  // constructor (props) {
+  //   super(props)
+  //   this.state = { scoreNumber: this.props.score }
+  // }
+
+  // componentWillReceiveProps (nextProps) {
+  //   console.log({nextProps})
+  //   this.setState({ scoreNumber: nextProps.score })
+  // }
+
   render () {
-    
-    const scoreNumber = Number(this.props.score)
+    const scoreNumber = this.props.score * 6
     // console.log(scoreNumber)
     const progressBar = {
       tau: 2 * Math.PI,
@@ -26,14 +31,14 @@ class UserProgress extends React.Component {
 
     return (
       <section>
-        <CountProgress {...progressBar} />
+        <CountProgress {...progressBar} image={this.props.image} />
       </section>
     )
   }
 }
 
 UserProgress.defaultProps = {
-  score: ''
+  score: 0
 }
 
 export default connect()(UserProgress)

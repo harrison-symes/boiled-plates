@@ -8,7 +8,12 @@ class CountProgress extends React.Component {
     this.renderSVG(radius, boxSize, tau, ratio)
     this.renderText(amount, total)
   }
+  componentWillReceiveProps (nextProps) {
+    const { tau, radius, padding, amount, total, boxSize, ratio } = nextProps
 
+    this.renderSVG(radius, boxSize, tau, ratio)
+    this.renderText(amount, total)
+  }
   renderSVG (radius, boxSize, tau, ratio) {
     // Transition function
     const arcTween = function (newAngle) {
@@ -48,9 +53,8 @@ class CountProgress extends React.Component {
       .style('fill', '#FE8500')
       .transition()
       .duration(1000)
-      .delay(1000)
+      .delay(500)
       .attrTween('d', arcTween(ratio * tau))
-
   }
 
   renderText (amount, total) {
@@ -75,11 +79,13 @@ class CountProgress extends React.Component {
   }
 
   render () {
+    // console.log(this.props)
     return (
       <div id="d3-graph">
-        <svg ref="container">
-          <div id='pro-image'>props.profile.image</div>
-        </svg>
+        <div>
+          <svg id="svg-image" ref="container" style={{backgroundImage: `url(${this.props.image})`}}>
+          </svg>
+        </div>
         {/* <div className="text">
           <p className="amount"></p>
           <p className="total"></p>
