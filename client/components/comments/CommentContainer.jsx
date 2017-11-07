@@ -6,6 +6,8 @@ import SingleComment from './SingleComment'
 const CommentContainer = (props) => {
   console.log(props)
   const comments = props.comments
+  // const recipeId = props.
+  
   return (
     <div className='comment'>
       {comments.map(comment => {
