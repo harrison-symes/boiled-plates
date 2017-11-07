@@ -14,7 +14,7 @@ export function getProfile () {
   return (dispatch) => {
     request('get', 'profiles')
       .then(res => {
-        console.log(res.body)
+        // console.log(res.body)
         dispatch(receiveProfile(res.body))
       })
       .catch(err => {

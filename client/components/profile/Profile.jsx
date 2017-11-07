@@ -1,10 +1,10 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import jump from 'jump.js'
 
-import { getRecipes} from '../../actions/recipes'
-import { getProfile} from '../../actions/profile'
+import {getRecipes} from '../../actions/recipes'
+import {getProfile} from '../../actions/profile'
 import UserProgress from './UserProgress.jsx'
 import UserRecipeContainer from '../recipes/UserRecipeContainer'
 
@@ -15,7 +15,9 @@ class Profile extends React.Component {
     // dispatch request
   }
   render () {
-    console.log(this.props.recipes)
+    const profile = this.props.profile
+    const {firstname, lastname} = profile
+
     return (
       <div className='profile'>
 
@@ -26,7 +28,7 @@ class Profile extends React.Component {
 
         <div className='side-bar'>
           <UserProgress />
-          <div className='badgets'>Badgets goes here</div>
+          <div className='badgets'>{firstname}, {lastname} </div>
         </div>
         <div className='post-container'>
           <div className='what-to-do'>
@@ -53,10 +55,18 @@ class Profile extends React.Component {
   }
 }
 
+Profile.defaultProps = {
+  profile: {
+    firstname: '',
+    lastname: '',
+    email: '',
+    recipes: []
+  }
+}
+
 const mapStateToProps = ({auth, recipes, profile}) => {
-  console.log({auth, recipes, profile})
   return {
-    recipes: recipes.filter(recipe => recipe.user_id == auth.user.id),
+    recipes: recipes.filter(recipe => recipe.user_id === auth.user.id),
     profile
   }
 }
