@@ -10,14 +10,11 @@ import UserRecipeContainer from '../recipes/UserRecipeContainer'
 
 class Profile extends React.Component {
   componentDidMount () {
-    this.props.dispatch(getRecipes())
     this.props.dispatch(getProfile())
-    // dispatch request
   }
   render () {
     const profile = this.props.profile
-    const {firstname, lastname, postValue, profile_image} = profile
-    // console.log(postTypeId)
+    const {firstname, lastname, postValue, profile_image, recipes} = profile
     return (
       <div className='profile'>
 
@@ -38,14 +35,10 @@ class Profile extends React.Component {
           </div>
 
           <div className='posts'>
-            {/* <div className='post-title'>Try my recipe</div>
-            <div className='returned-recipe'>
-            </div>
-            <img src='./images/placeholder.jpg' className='food-image' width='100%' />
-            <div className='post-content'>Hey Kai pals, I just came up this recipe that I'd like to share with you. Let me know what you think!</div> */}
 
             <div className='recipe-container'>
-              <UserRecipeContainer recipes={this.props.recipes}/>
+
+              {recipes && <UserRecipeContainer recipes={recipes}/>}
             </div>
 
           </div>
@@ -69,15 +62,8 @@ Profile.defaultProps = {
 
 const mapStateToProps = ({auth, recipes, profile}) => {
   return {
-    recipes: recipes.filter(recipe => recipe.user_id === auth.user ? auth.user.id : 0),
     profile
   }
 }
 
 export default connect(mapStateToProps)(Profile)
-
-{ /* <div className='posts'>
-  <div className='post-title'>My Kai Today!</div>
-  <img src='./images/placeholder.jpg' className='food-image' width='100%' />
-  <div className='post-content'>My first vegetarian meal. </div>
-</div> */ }

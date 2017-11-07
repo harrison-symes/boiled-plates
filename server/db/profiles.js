@@ -31,21 +31,20 @@ function formatProfile (objects, id) {
         profile.recipes = []
         return profile
       })
-  }
-  else {
+  } else {
     const {firstname, lastname, email, postTypeId, profile_image, postValue} = objects[0]
-    const profile = {firstname, lastname, email, recipes: []}
+    const profile = {firstname, lastname, email, postTypeId, profile_image, postValue, recipes: []}
     objects.forEach(object => {
       const existing = profile.recipes.find((recipe) => {
         return recipe && recipe.recipeId === object.recipeId
       })
       if (!existing) {
         const {name, instructions, ingredients, image, recipeId} = object
-  
+
         profile.recipes.push({name, instructions, ingredients, image, recipeId})
       }
     })
-  
+
     return profile
   }
 }

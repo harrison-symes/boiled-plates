@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import Recipe from './Recipe'
 
-function UserRecipeContainer(props) {
+function UserRecipeContainer (props) {
   const recipes = props.recipes
   return (
     <div className='recipe'>
