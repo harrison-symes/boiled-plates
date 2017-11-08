@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import SingleComment from './SingleComment'
 
 const CommentContainer = (props) => {
-  console.log('top props', props)
+  // console.log('top props', props)
   const { comments, recipe_id, user_id } = props
 
   // const user_id: 1 = 'Aaron',
@@ -29,7 +29,7 @@ const CommentContainer = (props) => {
 }
 
 const mapStateToProps = ({auth, comments, recipes}, props) => {
-  console.log({auth, comments})
+  // console.log({auth, comments})
   return {
     comments: comments.filter(comment => comment.recipe_id = props.recipeId)
 
