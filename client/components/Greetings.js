@@ -9,7 +9,7 @@ const renderGreeting = (greeting, key) => (
 
 const Greetings = ({greetings, dispatch}) => (
   <div>
-    <button onClick={() => dispatch(getGreetings())}>Show Greetings</button>
+    <button onClick={() => dispatch(getGreetings())}>Greetings</button>
     {greetings.map(renderGreeting)}
   </div>
 )
