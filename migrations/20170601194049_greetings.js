@@ -1,11 +1,11 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTableIfNotExists('cats', (table) => {
-    table.increments('id')
+    table.increments('id').primary()
     table.string('name')
     table.string('image')
     table.string('lifestory')
     table.string('colour')
-    table.increments('lives')
+    table.string('lives')
                 
   })
 }
