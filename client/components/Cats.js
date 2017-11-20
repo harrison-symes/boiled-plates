@@ -1,22 +1,22 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {getGreetings} from '../actions/greetings'
+import {getCats} from '../actions/cats'
 
-const renderGreeting = (greeting, key) => (
-  <h1 key={key}>{greeting.text}</h1>
+const renderCat = (cat, key) => (
+  <h1 key={key}>{cat.text}</h1>
 )
 
-const Greetings = ({greetings, dispatch}) => (
+const Cats = ({cats, dispatch}) => (
   <div>
-    <button onClick={() => dispatch(getGreetings())}>Greetings</button>
-    {greetings.map(renderGreeting)}
+    <button onClick={() => dispatch(getCats())}>Cats</button>
+    {cats.map(renderCats)}
   </div>
 )
 
 const mapStateToProps = (state) => {
-  return {greetings: state.greetings}
+  return {cats: state.cats}
 
 }
 
-export default connect(mapStateToProps)(Greetings)
+export default connect(mapStateToProps)(Cats)

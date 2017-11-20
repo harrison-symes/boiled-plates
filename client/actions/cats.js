@@ -16,7 +16,7 @@ export function getCats () {
           console.error(err.message)
           return
         }
-        dispatch(receiveGreetings(res.body))
+        dispatch(receiveCats(res.body))
       })
   }
 }
