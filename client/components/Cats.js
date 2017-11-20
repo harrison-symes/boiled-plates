@@ -10,7 +10,7 @@ const renderCat = (cat, key) => (
 const Cats = ({cats, dispatch}) => (
   <div>
     <button onClick={() => dispatch(getCats())}>Cats</button>
-    {cats.map(renderCats)}
+    {cats.map(renderCat)}
   </div>
 )
 
